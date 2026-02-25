@@ -12,6 +12,7 @@ import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";
 import footer from "../assets/footer.svg";
 import facebook from "../assets/facebook.svg";
+import vector from "../assets/Vector.svg";
 import explorebg from "../assets/explorebg.png";
 import wizly from "../assets/wizzly.png";
 import officeDesk from "../assets/officeDesk.svg";
@@ -33,6 +34,7 @@ const images = {
   footer,
   explorebg,
   wizly,
+  vector,
   officeDesk,
   happyBuyer,
   deliveryTruck
