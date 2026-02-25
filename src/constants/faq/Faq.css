@@ -1,0 +1,185 @@
+/* --- Main Container --- */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  background: #FFFFFF;
+}
+
+.faq-main-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #011633;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* --- The Grid Layout --- */
+.faq-grid-wrapper {
+  display: grid;
+
+  /* KEEP 2 COLUMNS */
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+  width: 100%;
+  max-width: 1140px; /* Same visual width as 557px x 2 + gap */
+  margin-bottom: 100px;
+}
+
+/* Switch to 1 column ONLY when necessary */
+@media (max-width: 900px) {
+  .faq-grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- FAQ Item --- */
+.faq-item-card {
+  background: #092E60;
+  border-radius: 16px;
+  padding: 31px 24px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: fit-content;
+}
+
+.faq-item-card.is-open {
+  background: #F1F7FF;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.faq-answer-row {
+  line-height: 1.5rem;
+  color: #3A5D8C;
+  font-size: 16px;
+}
+
+.text-block-14 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.is-open .text-block-14 {
+  color: #011633;
+}
+
+/* --- CTA Block --- */
+.cta-block-container {
+  position: relative;
+  width: 100%;
+  max-width: 1148px;
+  min-height: 617px;
+  margin: 80px auto;
+  background: radial-gradient(
+    150% 150% at 95.73% -9.66%,
+    rgba(13, 78, 166, 0.6) 0%,
+    rgba(5, 30, 64, 0.53) 80%
+  ), #011633;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  padding: 60px 20px;
+}
+
+.cta-block-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 750px;
+  padding: 31px 24px;
+  gap: 10px;
+}
+
+.cta-block-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .cta-block-container {
+    min-height: 500px;
+    width: fit-content ;
+    padding: 0px;
+  }
+  
+}
+/* Scale title slightly on smaller screens */
+@media (max-width: 768px) {
+    .cta-block-container{
+    min-height: 500px;
+    width: fit-content ;
+    padding: 0px;
+    }
+  .cta-block-title {
+    font-size: 28px;
+  }
+}
+
+.cta-block-description {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 200;
+  font-size: 32px;
+  line-height: 1.5;
+  color: #BAD7FF;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  width: 85%;
+}
+
+/* Scale description slightly on smaller screens */
+@media (max-width: 768px) {
+  .cta-block-description {
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+/* --- CTA Button --- */
+.cta-block-btn {
+  background: #FFC50F;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #011633;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cta-block-btn:hover {
+  transform: scale(1.05);
+  background: #f5bc0d;
+}
+
+.cta-block-btn svg {
+  font-size: 20px;
+}

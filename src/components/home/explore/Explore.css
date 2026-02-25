@@ -1,0 +1,205 @@
+.explore-container {
+  width: 100%;
+  padding: clamp(4rem, 20vh, 11.3125rem) clamp(1.25rem, 8vw, 11.3125rem);
+  background: radial-gradient(101.87% 101.87% at 95.73% -9.66%, rgba(13, 78, 166, 0.2) 0%, rgba(5, 30, 64, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.explore-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  /* Clamped 48px font */
+  font-size: clamp(1.8rem, 4vw, 3rem); 
+  line-height: 115%;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 60rem;
+  margin-bottom: clamp(3rem, 8vh, 5rem);
+}
+
+.explore-main-grid {
+  display: flex;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  width: 100%;
+  max-width: 1300px;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Left Card */
+.explore-card {
+  /* flex: 1; */
+  max-width: 699px; /* From your spec */
+  position: relative;
+  border-radius: 16px;
+  /* border: 0.5px solid rgba(255, 255, 255, 0.1); */
+  overflow: hidden;
+  /* background: #011633; */
+  height: 485px;
+  display: flex;
+  width: 100%;
+  /* justify-content: flex-end; */
+}
+
+.explore-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.card-overlay-content {
+  height: fit-content;
+  margin-top: auto;
+  padding: 2rem 4rem;
+}
+
+.card-overlay-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.card-overlay-content p {
+  font-size: 0.9rem;
+  color: #C8E0FF;
+  margin-bottom: 1.1rem;
+  max-width: 90%;
+  line-height: 1.2rem;
+  margin-bottom: 3.2rem;
+  width: 75%;
+  font-weight: 200;
+}
+
+/* Gap Lines Underneath Image Content */
+.progress-bars {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  height: 8px;
+}
+
+.gap-line {
+  height: 100%;
+  flex: 1;
+  background: #1E73E457;
+  transition: background 0.3s ease;
+}
+
+.gap-line.active {
+  background: #4091FF ;
+}
+
+/* Right Tabs */
+.explore-tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tab-btn {
+  width: clamp(280px, 30vw, 425px); /* From your 425px spec */
+  height: 103px; /* From your spec */
+  border-radius: 16px;
+  border: 0.5px solid rgba(204, 225, 255, 0.15);
+  background: #001B3F;
+  color: #6D89AF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #6D89AF;
+  color: #FFFFFF;
+  
+}
+
+.tab-btn:hover:not(.active) {
+  background: rgba(10, 55, 102, 0.8);
+}
+
+/* Bottom Actions */
+.explore-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .explore-main-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-overlay-content{
+    padding: 1.5rem;
+  }
+  .tab-btn, .explore-card {
+    width: 100%;
+  }
+  .explore-container {
+    padding: clamp(3rem, 15vh, 8rem) clamp(1rem, 18vw, 8rem);
+  }
+  .explore-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .progress-bars{
+    gap: 0.5rem;
+  }
+  .tab-btn {
+      height: 80px;
+  }
+
+  .card-overlay-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-overlay-content p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+    .explore-container{
+        padding: clamp(4rem, 20vh, 11.3125rem) clamp(1.25rem, 8vw, 11.3125rem);
+    }
+    .explore-tabs {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+
+/* The Animated Filling Part */
+.gap-line.active::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: rgba(10, 55, 102, 0.8); /* Your Yellow Theme */
+  /* Duration MUST match the 10000ms in JSX */
+  animation: fillProgress 10s linear forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}

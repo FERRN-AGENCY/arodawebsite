@@ -1,0 +1,283 @@
+/* --- Container & Typography --- */
+.ecosystem-container {
+  /* width: 100%; */
+  /* Using the 11.3125rem (181px) padding logic we established earlier */
+  padding: clamp(4rem, 10vh, 11.3125rem) clamp(1.25rem, 9vw, 11.3125rem);
+  background: #FFFFFF; /* The main section background in the screenshot is light */
+  color: #011633;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #001B3F;
+}
+
+/* --- Top Logo Grid --- */
+.logo-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.logo-item {
+  width: 202px;
+  height: 172px;
+  background: #F8F9FA; /* Light grey boxes from screenshot 3 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.logo-item img {
+  width: 60%;
+  opacity: 0.3; /* Muted logo look */
+}
+
+/* --- Main Title --- */
+.main-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  color: #001B3F;
+  margin-bottom: 3rem;
+  max-width: 963px;
+}
+
+/* --- The Grid System --- */
+.ecosystem-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grid-top, .grid-bottom {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr; /* Staggered width for top row */
+  gap: 1.5rem;
+  height: fit-content;
+}
+
+.grid-bottom {
+  grid-template-columns: 1fr 1.7fr; /* Inverted staggered width for bottom row */
+}
+
+/* --- Individual Cards --- */
+
+/* Big Meeting Image */
+.image-card {
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.big-aroda-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 80% Stat Card */
+.stat-card {
+  background: linear-gradient(203.67deg, #124C98 3.24%, #061932 84.76%);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.stat-value {
+  font-size: clamp(4rem, 6.8vw, 6rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #4091FF;
+}
+
+.stat-label {
+  font-size: 1.7rem;
+  line-height: 1.4;
+  color: #C7DFFF;
+  max-width: 80%;
+}
+
+/* Blue Aroda Logo Card (Bottom Left) */
+.logo-card {
+  background: #001B3F;
+  height: 280px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Topography line background effect if your image is transparent */
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.blue-aroda-img {
+  width: 50%;
+  height: 50%;
+}
+
+/* Business Simplified Card (Bottom Right) */
+.simplified-card {
+  background: linear-gradient(89.63deg, #061932 41.38%, #1F79EF 96.88%);
+  border-radius: 16px;
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFFFFF;
+}
+
+.simplified-text {
+  max-width: 60%;
+}
+
+.simplified-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.simplified-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #C8E0FF;
+}
+
+/* --- Progress Bars (Gap Lines) --- */
+.progress-bars {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.gap-line {
+  height: 4px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  /* border-radius: 10px; */
+}
+
+.gap-line.active {
+  background: #4091FF;
+  /* Adding the 10s animation logic we used in the previous component */
+  position: relative;
+  overflow: hidden;
+}
+
+.gap-line.active::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #4091FF;
+  animation: fillProgress 10s linear forwards;
+}
+
+/* --- Buttons --- */
+.get-started-btns {
+  background: #FFC50F;
+  color: #011633;
+  border: none;
+  padding: 2rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+  width: fit-content;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* --- Responsive Magic --- */
+@media (max-width: 1024px) {
+  
+  .simplified-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1.4rem;
+  }
+
+  .simplified-text {
+    max-width: 100%;
+  }
+
+  .logo-grid {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    margin-bottom: 4rem;
+  }
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+/* ========== Tablet (765px and below) ========== */
+@media (max-width: 769px) {
+    .stat-value{
+    font-size: clamp(3rem, 8vw, 5rem);
+    }
+    .stat-label{
+    font-size: 1.2rem;
+    }
+  .grid-bottom p {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  }
+
+}
+
+
+/* ========== Mobile (480px and below) ========== */
+@media (max-width: 480px) {
+
+  /* GRID TOP → 1 by 1 */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* GRID BOTTOM → 1 by 1 */
+  .grid-bottom, .grid-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .logo-item{
+    width: 90%;
+    height: fit-content;
+    padding: 1.5rem 0rem;
+    margin-bottom: 1rem;
+  }
+  /* Optional: slightly smaller text for small phones */
+  .grid-bottom h3 {
+    font-size: 1.2rem;
+  }
+
+  .grid-bottom p {
+    font-size: 0.9rem;
+  }
+  .main-title{
+    font-size: 1.5rem;
+  }
+
+}

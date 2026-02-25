@@ -1,0 +1,215 @@
+/* Footer Container */
+.footer-container {
+  position: relative;
+  width: 100%;
+  /* wisdom: allow height to grow with content on mobile */
+  min-height: clamp(30rem, 100vh, 40rem); 
+  background: radial-gradient(101.87% 101.87% at 95.73% -9.66%, rgba(13, 78, 166, 0.53) 0%, rgba(5, 30, 64, 0.53) 65.41%);
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+/* Content Wrapper */
+.footer-content-wrapper {
+  position: relative;
+  z-index: 2;
+  /* wisdom: clamp padding so 100px (6.25rem) only exists on large screens */
+  padding: 5rem clamp(1.25rem, 6vw, 6.25rem) 2rem clamp(1.25rem, 6vw, 6.25rem);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Background Image Layer */
+.footer-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Top Section Layout */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5rem;
+  /* wisdom: allow wrapping for tablet sizes */
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* Brand Section */
+.footer-brand {
+  max-width: 15rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo img {
+  width: 7.9rem;
+  height: 2.4rem;
+}
+
+.footer-tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 145%;
+  color: #C3DDFF;
+  margin-bottom: 2rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.social-icon {
+  width: 1.3rem;
+  height: 1rem;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(84%) sepia(38%) saturate(3665%) hue-rotate(352deg) brightness(102%) contrast(101%);
+}
+
+/* Links Grid */
+.footer-links-grid {
+  display: flex;
+  /* wisdom: clamp the 99px gap so links don't fly off screen */
+  gap: clamp(1.5rem, 5vw, 6.18rem);
+  flex-wrap: wrap;
+}
+
+.footer-column h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 145%;
+  color: #FFBA07;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+/* Bottom Divider */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: #4091FF;
+  margin-bottom: 1.25rem;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: #C3DDFF;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Massive Watermark ARODA */
+.footer-bg-text {
+    position: relative;
+    height: 24.9rem;
+    width: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 26.8rem;
+    text-align: center;
+    pointer-events: none;
+
+    /* Soft light blend mode and gradient from spec */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.24%, rgba(5, 30, 64, 0.2) 100%), #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: soft-light;
+    opacity: 0.2; /* Extra transparency for subtlety */
+}
+
+/* --- MOBILE SPECIFIC ADJUSTMENTS --- */
+@media (max-width: 1029px) {
+  .footer-bg-text{
+    font-size: clamp(4rem, 28vw, 26.8rem);
+    margin-top: auto;
+    height: fit-content;
+    margin-bottom: 0px;
+    padding: 0px;
+    top: 3.9rem;
+  }
+  
+}
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-links-grid {  
+    justify-content: center;
+    width: 100%;
+    gap: 5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .legal-links {
+    justify-content: center;
+  }
+  /* Massive Watermark ARODA */
+    .footer-bg-text {
+        /* wisdom: scale text and height so it doesn't break mobile width */
+        height: clamp(8rem, 27vw, 24.9rem);
+        font-size: clamp(4rem, 28.5vw, 26.8rem);
+        position: relative;
+        /* left: -1rem;  */
+        top: 1rem;
+        padding: 0px;
+        margin-bottom: 0px;
+        font-weight: 500;
+        height: fit-content;
+        transform: scaleY(1.3);
+    }
+}

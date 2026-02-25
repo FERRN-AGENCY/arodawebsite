@@ -1,0 +1,286 @@
+/* --- Container & Layout --- */
+.market-container {
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 8vw, 11.3125rem);
+  background: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  color: #011633;
+ 
+}
+
+/* --- Intro Section (Screenshot 3 Style) --- */
+.market-intro {
+  max-width: 1100px;
+  margin: 0 auto clamp(4rem, 8vw, 8rem);
+  text-align: left;
+}
+
+.intro-image-wrapper {
+  width: 100%;
+  border-radius: clamp(12px, 2vw, 20px);
+  overflow: hidden;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.intro-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.intro-text p {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: clamp(0.25rem, 1vw, 0.5rem);
+  color: #001B3F;
+}
+
+.intro-text .highlight-text {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: rgba(64, 145, 255, 0.5); /* Faded blue as requested */
+  max-width: 800px;
+  line-height: 1.4;
+}
+
+/* --- Order Section (1-4 Counter) --- */
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  color: #001B3F;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: 1.56fr 1fr;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.order-image-card {
+  /* height: clamp(300px, 40vw, 480px); */
+  border-radius: clamp(12px, 1.5vw, 16px);
+  overflow: hidden;
+}
+
+.order-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-stat-card {
+  background: linear-gradient(223.67deg, #124C98 1.24%, #061932 44.76%);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  padding: 0rem clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 1.8rem) clamp(1rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  position: relative;
+}
+.number{
+    display: flex;
+}
+.empty{
+    width: 90%;
+}
+.order-number {
+  font-size: clamp(8rem, 22vw, 27.5rem);
+  font-weight: 600;
+  color: rgba(64, 145, 255, 0.2); /* Faded large number background */
+  line-height: 0.9;
+}
+
+.order-step-title {
+  margin-top: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  position: relative;
+}
+
+.order-step-desc {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #C8E0FF;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* --- The 4 Tracking Rectangles --- */
+.order-progress-bars {
+  display: flex;
+  gap: clamp(6px, 1vw, 12px);
+  margin-top: clamp(1rem, 2vw, 2rem);
+}
+
+.progress-rect {
+  height: 6px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.4s ease;
+}
+
+.progress-rect.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+.progress-rect.active::after{
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #4091FF;
+  animation: fillProgress 10s linear forwards;
+}
+
+/* --- Toggle Section (Merchant/Buyer) --- */
+.toggle-section {
+  margin-top: clamp(5rem, 10vw, 10rem);
+  text-align: center;
+}
+
+.section-subtitle {
+  color: #7A9BC7;
+  margin-top: clamp(-1.5rem, -3vw, -3rem);
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  max-width: 500px;
+  margin: 0 auto clamp(1.5rem, 3vw, 3rem) auto;
+}
+
+.tab-container {
+  display: inline-flex;
+  background: #F0F4F8;
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+}
+
+.tab-btns {
+  padding: clamp(0.8rem, 1.5vw, 1.4rem) clamp(1.5rem, 3vw, 3.5rem);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #6B7280;
+  width: 50%;
+}
+
+.tab-btns.active {
+  background: #001B3F;
+  color: #FFFFFF;
+  width: 50%;
+}
+
+.toggle-display-card {
+  position: relative;
+  width: 100%;
+  /* height: 550px; */
+  border-radius: clamp(12px, 2vw, 20px);
+  overflow: hidden;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.display-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.display-content{
+}
+.display-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 3vw, 3rem);
+  background: linear-gradient(transparent, rgba(0, 27, 63, 0.95));
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.display-overlay h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
+}
+.display-overlay p{
+    max-width: 675px;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: #99C5FF;
+}
+
+/* --- Feature Tags --- */
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.5vw, 12px);
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.feature-tags span {
+  background: #F0F7FF;
+  padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 90px);
+  border-radius: 8px;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  color: #001B3F;
+  border: 1px solid #D1E5FF;
+}
+
+/* --- Buttons --- */
+.order-actions {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 20px);
+  margin-top: clamp(1.5rem, 3vw, 3rem);
+}
+
+.secondary-btn {
+  background: #F0F4F8;
+  border: none;
+  padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 28px);
+  border-radius: 10px;
+  font-weight: 600;
+  color: #001B3F;
+  cursor: pointer;
+}
+
+.get-started-btnd {
+  background: #FFC50F;
+  border: none;
+  padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 28px);
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+  cursor: pointer;
+}
+
+.fade-in {
+  animation: fadeInEffect 0.6s ease-in;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* --- Responsive --- */
+@media (max-width: 650px) {
+  .order-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+    .market-container{
+         padding-bottom: 0px;
+    }
+    .display-overlay {
+        display: none;
+    }
+    
+}
