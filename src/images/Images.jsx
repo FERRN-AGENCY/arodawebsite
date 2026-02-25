@@ -10,6 +10,7 @@ import home from "../assets/home.svg";
 import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";
+import footer from "../assets/footer.svg";
 import facebook from "../assets/facebook.svg";
 import explorebg from "../assets/explorebg.png";
 import wizly from "../assets/wizzly.png";
