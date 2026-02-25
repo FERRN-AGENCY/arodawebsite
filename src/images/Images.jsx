@@ -11,8 +11,6 @@ import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
-import footer from "../assets/footer.svg";
-import vector from "../assets/vector.svg";
 import explorebg from "../assets/explorebg.png";
 import wizly from "../assets/wizzly.png";
 import officeDesk from "../assets/officeDesk.svg";
@@ -32,7 +30,6 @@ const images = {
   instagram,
   facebook,
   footer,
-  vector,
   explorebg,
   wizly,
   officeDesk,
