@@ -17,17 +17,17 @@ const NavPopup = () => {
           </div>
 
           <div className="popup-feature-box active-feature">
-            <h4>How Aroda keep things organized?</h4>
+            <h4><a href="/merchants#section">How Aroda keep things organized?</a></h4>
             <p>Structured systems ensure transactions stay smooth and predictable.</p>
           </div>
 
           <div className="popup-feature-box">
-            <h4>What protections do buyers have?</h4>
+            <h4><a href="/merchants#setup">What protections do buyers have?</a></h4>
             <p>Support stays involved until problems are resolved.</p>
           </div>
 
           <div className="popup-footer-link">
-            <span>Frequently Asked Questions</span>
+            <span><a href="/merchants#FAQ">Frequently Asked Questions</a></span>
           </div>
         </div>
 
@@ -36,22 +36,22 @@ const NavPopup = () => {
           <span className="popup-category">Aroda Business Pro</span>
           
           <div className="popup-feature-box">
-            <h4>What is Aroda Business Pro?</h4>
+            <h4><a href="/business">What is Aroda Business Pro?</a></h4>
             <p>An all-in-one app for tracking sales, stock, staff, and performance.</p>
           </div>
 
           <div className="popup-feature-box">
-            <h4>Can I manage my business remotely?</h4>
+            <h4><a href="/business#section">Can I manage my business remotely?</a></h4>
             <p>Monitor performance from anywhere, anytime.</p>
           </div>
 
           <div className="popup-feature-box">
-            <h4>How long does setup take?</h4>
+            <h4><a href="/business#setup">How long does setup take?</a></h4>
             <p>Most businesses can start using it within minutes.</p>
           </div>
 
           <div className="popup-footer-link">
-            <span>Frequently Asked Questions</span>
+            <span><a href="/business#FAQ">Frequently Asked Questions</a></span>
           </div>
         </div>
 

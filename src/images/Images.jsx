@@ -18,6 +18,15 @@ import wizly from "../assets/wizzly.png";
 import officeDesk from "../assets/officeDesk.svg";
 import happyBuyer from "../assets/happyBuyer.svg";
 import deliveryTruck from "../assets/deliveryTruck.svg";
+import darkroom from "../assets/Darkroom.svg";
+import rider from "../assets/Rider.svg";
+import inventory from "../assets/Inventory.svg";
+import tracking from "../assets/Tracking.svg";
+import access from "../assets/Access.svg";
+import record from "../assets/Record.svg";
+import pie from "../assets/Pie.svg";
+import offline from "../assets/Offline.svg";
+import tax from "../assets/Tax.svg";
 
 const images = {
   Aroda,
@@ -37,7 +46,16 @@ const images = {
   vector,
   officeDesk,
   happyBuyer,
-  deliveryTruck
+  deliveryTruck,
+  darkroom,
+  rider,
+  inventory,
+  tracking,
+  access,
+  record,
+  pie,
+  offline,
+  tax
 
 };
 

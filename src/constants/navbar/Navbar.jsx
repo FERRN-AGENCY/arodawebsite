@@ -8,7 +8,7 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
   // Track desktop status to prevent NavPopup on mobile
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 960);
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      const desktopCheck = window.innerWidth > 1024;
+      const desktopCheck = window.innerWidth > 960;
       setIsDesktop(desktopCheck); // Update desktop status on resize
 
       if (desktopCheck && isMobileMenuOpen) {

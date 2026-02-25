@@ -42,7 +42,7 @@ const Market = () => {
       </div>
 
       {/* --- Steps Section (1-4 Counter) --- */}
-      <div className="order-section">
+      <div className="order-section" id='section'>
         <h2 className="section-title">How the platform keeps things in order</h2>
         
         <div className="order-grid">
@@ -80,7 +80,7 @@ const Market = () => {
       </div>
 
       {/* --- Toggle Section (Merchants vs Buyers) --- */}
-      <div className="toggle-section">
+      <div className="toggle-section" id='setup'>
         <h2 className="section-title">Built for Merchants. Designed for Buyers.</h2>
         <p className="section-subtitle">Streamline your business, connect with customers, and grow effortlessly.</p>
 

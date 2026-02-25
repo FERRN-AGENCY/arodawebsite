@@ -116,7 +116,7 @@
   display: none ;
 }
 /* --- Desktop vs Mobile visibility --- */
-@media (max-width: 1024px) {
+@media (max-width: 960px) {
   /* Strictly hide the original desktop list and button */
   .navbar-links, 
   .navbar-cta.desktop-only {

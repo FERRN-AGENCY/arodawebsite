@@ -282,5 +282,13 @@
     .display-overlay {
         display: none;
     }
-    
+    .toggle-section{
+        text-align: left;
+    }
+    .section-title{
+        text-align: left;
+    }
+    .intro-text p,.intro-text .highlight-text{
+        font-size: 0.9rem;
+    }
 }

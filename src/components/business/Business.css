@@ -1,155 +1,282 @@
+/* --- Global Section Container --- */
 .business-container {
   padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 8vw, 11.3125rem);
-  background: #F8FAFC; /* Light subtle grey background to contrast the white cards */
-}
-
-.business-header {
-  text-align: center;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
-}
-
-.business-bento-grid {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* --- Main Large Card --- */
-.main-feature-card {
   background: #FFFFFF;
-  border-radius: clamp(16px, 2vw, 24px);
-  padding: clamp(2rem, 4vw, 4rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #E2E8F0;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  font-family: 'Poppins', sans-serif;
+  color: #001B3F;
 }
 
-.feature-tag {
-  background: #E0E7FF;
-  color: #4338CA;
-  padding: 6px 16px;
-  border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 1.5rem;
+/* --- SECTION 1: Losses Section --- */
+.losses-section {
+  max-width: 1200px;
+  margin: 0 auto clamp(6rem, 10vw, 10rem);
 }
 
-.feature-content h3 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+.losses-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
   color: #001B3F;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
-  max-width: 500px;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.feature-content p {
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  color: #64748B;
-  margin-bottom: 2.5rem;
-  max-width: 450px;
-}
-
-.feature-image-wrapper {
-  margin-top: 2rem;
-  width: 110%; /* Slight bleed off the edge for style */
-  transform: translateX(5%);
-}
-
-.main-dashboard-img {
+.losses-image-wrapper {
   width: 100%;
-  border-radius: 12px 0 0 12px;
-  box-shadow: -20px 20px 50px rgba(0,0,0,0.1);
-}
-
-/* --- Sidebar Tool Boxes --- */
-.tools-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1rem, 2vw, 1.5rem);
-}
-
-.tool-box {
-  background: #FFFFFF;
-  padding: clamp(1rem, 2vw, 1.5rem);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  border: 1px solid #E2E8F0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.tool-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  border-color: #4091FF;
-}
-
-.tool-image-container {
-  width: clamp(50px, 5vw, 70px);
-  height: clamp(50px, 5vw, 70px);
-  background: #F0F7FF;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: clamp(300px, 40vw, 550px);
+  border-radius: clamp(12px, 2vw, 24px);
   overflow: hidden;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.tool-icon-img {
+.losses-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.tool-text h4 {
-  font-size: 1.2rem;
+.losses-text-content {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.losses-text-content .dark-text {
   color: #001B3F;
-  margin-bottom: 4px;
+  margin-bottom: 0.5rem;
 }
 
-.tool-text p {
-  font-size: 0.9rem;
-  color: #64748B;
+.losses-text-content .light-blue-text {
+  color: #99C5FF;
+  font-weight: 500;
 }
 
-/* --- Footer Trust Bar --- */
-.business-footer-tags {
+
+/* --- SECTION 2: Total Control Section --- */
+.total-control-section {
+  max-width: 1200px;
+  margin: 0 auto clamp(6rem, 10vw, 10rem);
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #001B3F;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.hero-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(400px, 50vw, 600px);
+  border-radius: clamp(16px, 2vw, 24px);
+  overflow: hidden;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.hero-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The gradient overlay that sits at the bottom of the image */
+.hero-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem);
+  background: linear-gradient(transparent, rgba(0, 27, 63, 0.95) 80%);
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.hero-card-overlay h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-card-overlay p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #C8E0FF;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Feature Pills */
+.feature-pills-container {
   display: flex;
-  justify-content: center;
-  gap: clamp(2rem, 5vw, 4rem);
-  margin-top: clamp(4rem, 8vw, 6rem);
-  padding-top: 3rem;
-  border-top: 1px solid #E2E8F0;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.5vw, 16px);
 }
 
-.trust-item {
+.feature-pill {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.trust-item p {
+  gap: 10px;
+  padding: clamp(10px, 1.5vw, 14px) clamp(16px, 2vw, 24px);
+  background: #F0F4F8;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #001B3F;
+  font-size: clamp(0.85rem, 1vw, 1rem);
   font-weight: 500;
-  color: #475569;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* --- Responsive Layout --- */
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  background: #99C5FF;
+  border-radius: 50%;
+}
+
+.feature-pill.active {
+  background: #001B3F;
+  color: #FFFFFF;
+}
+
+.feature-pill.active .pill-dot {
+  background: #4091FF;
+}
+
+
+/* --- SECTION 3: What You Can Control Grid --- */
+.what-you-control-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.control-card {
+  background: linear-gradient(180deg, #0A2A54 0%, #061932 100%); 
+  border-radius: clamp(12px, 1.5vw, 16px);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  padding-top: 1rem;
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.control-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  width: clamp(40px, 10vw, 150px);
+  height: clamp(40px, 10vw, 150px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  width: 100%;
+}
+
+.control-icon {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  margin-left: auto;
+  opacity: 0.4;
+}
+
+.control-title {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.control-desc {
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  color: #99C5FF; 
+  line-height: 1.5;
+}
+
+/* The Fused 8th Card */
+.large-card {
+  grid-column: span 2; 
+  background: linear-gradient(39.63deg, rgb(6, 25, 50) 61.38%, rgb(31, 121, 239) 109.88%);
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(2rem, 3vw, 3rem);
+}
+
+.large-card-content {
+  max-width: 60%;
+}
+
+.large-title {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  margin-bottom: 1rem;
+}
+
+.large-desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  max-width: 90%;
+  color: #C8E0FF;
+}
+
+/* Button */
+.get-started-btn {
+  background: #FFC50F; 
+  color: #011633;
+  border: none;
+  padding: clamp(12px, 1.5vw, 14px) clamp(20px, 3vw, 28px);
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+
+/* --- Responsive Breakpoints --- */
 @media (max-width: 1024px) {
-  .business-bento-grid {
-    grid-template-columns: 1fr;
+  .control-grid {
+    grid-template-columns: repeat(2, 1fr); 
   }
-  
-  .feature-image-wrapper {
-    width: 100%;
-    transform: none;
+  .large-card {
+    grid-column: span 2; 
+  }
+}
+
+@media (max-width: 768px) {
+  .control-grid {
+    grid-template-columns: 1fr; 
+  }
+  .large-card {
+    grid-column: span 1; 
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .large-card-content {
+    max-width: 100%;
+  }
+  .get-started-btn {
+      width: 100%;
+      justify-content: center;
+  }
+  .feature-pills-container {
+    justify-content: flex-start;
   }
 }
