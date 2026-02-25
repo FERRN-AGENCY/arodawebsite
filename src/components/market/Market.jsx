@@ -42,8 +42,8 @@ const Market = () => {
       </div>
 
       {/* --- Steps Section (1-4 Counter) --- */}
-      <div className="order-section" id='section'>
-        <h2 className="section-title">How the platform keeps things in order</h2>
+      <div className="order-section" >
+        <h2 className="section-title" id='section'>How the platform keeps things in order</h2>
         
         <div className="order-grid">
           <div className="order-image-card">
