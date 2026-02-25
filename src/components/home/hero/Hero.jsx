@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from '../../../constants/navbar/Navbar';
 import { images } from '../../../images';
 import { HiArrowRight } from "react-icons/hi"; // For the Get Started button arrow

@@ -1,0 +1,155 @@
+.business-container {
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 8vw, 11.3125rem);
+  background: #F8FAFC; /* Light subtle grey background to contrast the white cards */
+}
+
+.business-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.business-bento-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Main Large Card --- */
+.main-feature-card {
+  background: #FFFFFF;
+  border-radius: clamp(16px, 2vw, 24px);
+  padding: clamp(2rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.feature-tag {
+  background: #E0E7FF;
+  color: #4338CA;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.feature-content h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #001B3F;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.feature-content p {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: #64748B;
+  margin-bottom: 2.5rem;
+  max-width: 450px;
+}
+
+.feature-image-wrapper {
+  margin-top: 2rem;
+  width: 110%; /* Slight bleed off the edge for style */
+  transform: translateX(5%);
+}
+
+.main-dashboard-img {
+  width: 100%;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -20px 20px 50px rgba(0,0,0,0.1);
+}
+
+/* --- Sidebar Tool Boxes --- */
+.tools-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.tool-box {
+  background: #FFFFFF;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: #4091FF;
+}
+
+.tool-image-container {
+  width: clamp(50px, 5vw, 70px);
+  height: clamp(50px, 5vw, 70px);
+  background: #F0F7FF;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tool-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tool-text h4 {
+  font-size: 1.2rem;
+  color: #001B3F;
+  margin-bottom: 4px;
+}
+
+.tool-text p {
+  font-size: 0.9rem;
+  color: #64748B;
+}
+
+/* --- Footer Trust Bar --- */
+.business-footer-tags {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(4rem, 8vw, 6rem);
+  padding-top: 3rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trust-item p {
+  font-weight: 500;
+  color: #475569;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
+  .business-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-image-wrapper {
+    width: 100%;
+    transform: none;
+  }
+}

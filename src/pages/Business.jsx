@@ -1,4 +1,5 @@
 import React from 'react'
+import { Businesx} from "../components" ;
 import { Hero }  from "../constants" ;
 import { Footer, Faq } from "../constants" ;
 
@@ -14,6 +15,7 @@ const Business = () => {
         primaryBtnText="Sign In"
         input="input"
       />
+      <Businesx />
       <Faq />
       <Footer />
     </div>
