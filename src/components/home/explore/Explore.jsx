@@ -58,6 +58,8 @@ const Explore = () => {
                 <div 
                   key={index} 
                   className={`gap-line ${activeTab === index ? 'active' : ''}`}
+                  onClick={() => setActiveTab(index)} /* <-- ADDED THIS LINE */
+                  style={{ cursor: 'pointer' }} /* Optional: makes it clear it's clickable */
                 />
               ))}
             </div>

@@ -27,6 +27,8 @@ import record from "../assets/Record.svg";
 import pie from "../assets/Pie.svg";
 import offline from "../assets/Offline.svg";
 import tax from "../assets/Tax.svg";
+import businessMan from "../assets/businessMan.svg";
+import businessMain from "../assets/businessMain.svg";
 
 const images = {
   Aroda,
@@ -55,7 +57,9 @@ const images = {
   record,
   pie,
   offline,
-  tax
+  tax,
+  businessMan,
+  businessMain
 
 };
 

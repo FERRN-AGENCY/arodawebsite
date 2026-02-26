@@ -9,7 +9,7 @@ const Merchants = () => {
       <Hero 
         badgeText="ARODA MARKETPLACE"
         titlePart1="Buy and sell with"
-        titleHighlight="confidence"
+        title="confidence"
         description="A marketplace designed to make buying and selling feel straightforward and dependable."
         secondaryBtnText="Become a Verified Merchant"
         primaryBtnText="Shop on Aroda"

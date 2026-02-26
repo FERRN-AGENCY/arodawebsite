@@ -9,7 +9,6 @@
 
 /* --- Intro Section (Screenshot 3 Style) --- */
 .market-intro {
-  max-width: 1100px;
   margin: 0 auto clamp(4rem, 8vw, 8rem);
   text-align: left;
 }
@@ -244,6 +243,7 @@
 }
 
 .get-started-btnd {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: #FFC50F;
   border: none;
   padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 28px);

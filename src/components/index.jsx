@@ -3,4 +3,5 @@ export { default as Ecosystem } from "./home/ecosystem/Ecosystem";
 export { default as Explore } from "./home/explore/Explore";
 // export { default as HomeFAQ } from "../home/home-faq/HomeFAQ";
 export { default as Market} from "./market/Market";
-export { default as Businesx} from "./business/Business"; 
+export { default as Businesx} from "./business/Business";
+export { default as Blogs} from "./resources/blog/Blog";

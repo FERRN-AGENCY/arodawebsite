@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { images } from '../../images';
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { HiArrowRight } from "react-icons/hi";
 import './Market.css';
 
 const Market = () => {
@@ -65,6 +65,8 @@ const Market = () => {
                 <div 
                   key={index} 
                   className={`progress-rect ${activeOrderStep === index ? 'active' : ''}`}
+                  onClick={() => setActiveOrderStep(index)} /* <-- ADDED THIS LINE */
+                  style={{ cursor: 'pointer' }} /* Optional: makes it clear it's clickable */
                 />
               ))}
             </div>
@@ -74,7 +76,7 @@ const Market = () => {
         <div className="order-actions">
            <button className="secondary-btn">Explore Aroda</button>
            <button className="get-started-btnd">
-             Get Started <IoIosArrowRoundForward />
+             Get Started <HiArrowRight />
            </button>
         </div>
       </div>
@@ -131,7 +133,7 @@ const Market = () => {
         <div className="order-actions bottom-cta">
            <button className="secondary-btn">Explore Solutions</button>
            <button className="get-started-btnd">
-             Get Started <IoIosArrowRoundForward />
+             Get Started <HiArrowRight />
            </button>
         </div>
       </div>

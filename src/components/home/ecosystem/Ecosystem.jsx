@@ -86,6 +86,8 @@ const Ecosystem = () => {
                   <div 
                     key={index} 
                     className={`gap-line ${activeStat === index ? 'active' : ''}`}
+                    onClick={() => setActiveStat(index)} /* <-- ADDED THIS LINE */
+                    style={{ cursor: 'pointer' }} /* Optional: makes it clear it's clickable */
                   />
                 ))}
               </div>

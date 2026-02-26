@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className={`navbar-wrapper ${isMobileMenuOpen ? 'mobile-nav-active' : ''}`} ref={navRef}>
       <div className="navbar">
         <div className="navbar-logo">
-          <img src={images.Aroda} alt="ARODA" />
+          <a href="/home"><img src={images.Aroda} alt="ARODA" /></a>
         </div>
 
         <ul className="navbar-links desktop-only">

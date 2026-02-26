@@ -145,11 +145,10 @@ const Business = () => {
             <div className="large-card-content">
               <h3 className="control-title large-title">Run your business with clarity</h3>
               <p className="control-desc large-desc">
-                Get the visibility and control you need to make the right decisions. 
-                No noise. Just clear, actionable insights.
+                Aroda Business Pro gives business owners clear visibility and control over their operations. No noise. No guesswork. Just organised systems that work.
               </p>
             </div>
-            <button className="get-started-btn">
+            <button className="get-started-btns">
               Get Started <IoIosArrowRoundForward className="btn-arrow" />
             </button>
           </div>

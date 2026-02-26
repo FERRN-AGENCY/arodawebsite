@@ -38,13 +38,10 @@
   max-width: 699px; /* From your spec */
   position: relative;
   border-radius: 16px;
-  /* border: 0.5px solid rgba(255, 255, 255, 0.1); */
   overflow: hidden;
-  /* background: #011633; */
   height: 485px;
   display: flex;
   width: 100%;
-  /* justify-content: flex-end; */
 }
 
 .explore-img {
@@ -108,7 +105,7 @@
   width: clamp(280px, 30vw, 425px); /* From your 425px spec */
   height: 103px; /* From your spec */
   border-radius: 16px;
-  border: 0.5px solid rgba(204, 225, 255, 0.15);
+  border: none;
   background: #001B3F;
   color: #6D89AF;
   font-family: 'Poppins', sans-serif;
@@ -120,7 +117,7 @@
 }
 
 .tab-btn.active {
-  background: #6D89AF;
+  background: #0F366A;
   color: #FFFFFF;
   
 }

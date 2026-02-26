@@ -37,7 +37,7 @@
 
 .logo-item img {
   width: 60%;
-  opacity: 0.3; /* Muted logo look */
+  /* opacity: 0.3; */
 }
 
 /* --- Main Title --- */
@@ -134,7 +134,7 @@
   border-radius: 16px;
   padding: 3rem 4rem;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   color: #FFFFFF;
 }
@@ -187,12 +187,13 @@
 
 /* --- Buttons --- */
 .get-started-btns {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: #FFC50F;
   color: #011633;
   border: none;
-  padding: 2rem 2rem;
+  padding: 1rem 1.5rem;
   border-radius: 12px;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -202,7 +203,7 @@
   width: fit-content;
 }
 
-.get-started-btn:hover {
+.get-started-btns:hover {
   transform: translateY(-2px);
 }
 

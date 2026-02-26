@@ -16,7 +16,6 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
             /* 45 degrees turns a + into an X */
             transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
             transition: 'transform 0.3s ease',
-            filter: isOpen ? 'invert(1)' : 'none' // Optional: flips color if background changes
           }}
         />
       </div>

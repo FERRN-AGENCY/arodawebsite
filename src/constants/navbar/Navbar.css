@@ -24,8 +24,11 @@
   display: flex;
   align-items: center;
   gap: 0.625rem;
+  margin: auto 0;
 }
-
+.navbar-logo a{
+  margin-bottom: 0px;
+}
 .navbar-logo img {
   /* Image dimensions from your spec: 130px width, 40px height */
   width: 8.125rem; 
@@ -82,6 +85,7 @@
 
 .get-started-btn {
   /* Layout from Frame 2121457601 specs */
+  font-family: 'Plus Jakarta Sans', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -100,7 +104,7 @@
   cursor: pointer;
 
   /* Font styling */
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;   /* 14px */
   line-height: 1.125rem; /* 18px */
   color: #011633;
@@ -137,7 +141,6 @@
   /* The Toggle turns dark when the drawer (white bg) is open */
   .mobile-nav-active .mobile-menu-toggle {
     color: #011633;
-    transform: rotate(90deg);
   }
 
   /* --- Beautified Mobile Drawer --- */

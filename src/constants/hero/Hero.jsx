@@ -16,7 +16,8 @@ const Hero = ({
   placeholder,
   input,
   className,
-  width
+  width,
+  title
 }) => {
   return (
     <section 
@@ -31,7 +32,7 @@ const Hero = ({
         
         {/* Title with dynamic yellow highlight */}
         <h1 className="hero-title">
-          {titlePart1} <br className={className}/> <span className='yellow'>{titleHighlight}</span>{titlePart2}
+          {titlePart1} <span className='yellow'>{title}</span><br className={className}/> <span className='yellow'>{titleHighlight}</span>{titlePart2}
         </h1>
         
         {/* Description using the Light font style we set up */}
