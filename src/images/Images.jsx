@@ -27,8 +27,8 @@ import record from "../assets/Record.svg";
 import pie from "../assets/Pie.svg";
 import offline from "../assets/Offline.svg";
 import tax from "../assets/Tax.svg";
-import businessMan from "../assets/businessMan.svg";
-import businessMain from "../assets/businessMain.svg";
+import businessMan from "../assets/BusinessMan.svg";
+import businessMain from "../assets/BusinessMain.svg";
 
 const images = {
   Aroda,
