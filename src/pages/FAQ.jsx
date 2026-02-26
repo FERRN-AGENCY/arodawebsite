@@ -1,6 +1,7 @@
 import React from 'react'
 import { Hero }  from "../constants" ;
 import { Footer } from "../constants" ;
+import { Faqs } from "../components" ;
 
 const FAQ = () => {
   return (
@@ -17,6 +18,7 @@ const FAQ = () => {
         className="input"
         width= "width"
       />
+      <Faqs />
       <Footer />
     </div>
   )

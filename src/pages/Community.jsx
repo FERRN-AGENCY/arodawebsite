@@ -1,6 +1,7 @@
 import React from 'react'
 import { Hero }  from "../constants" ;
 import { Footer } from "../constants" ;
+import { Communities } from "../components" ;
 
 const Community = () => {
   return (
@@ -16,6 +17,7 @@ const Community = () => {
         className="input"
         width= "width"
       />
+      <Communities />
       <Footer />
     </div>
   )

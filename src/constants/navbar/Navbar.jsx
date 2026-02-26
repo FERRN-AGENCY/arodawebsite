@@ -46,11 +46,28 @@ const Navbar = () => {
 
         <ul className="navbar-links desktop-only">
           <li className={`nav-item ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => setActiveMenu('home')}>Home</li>
+          
           <li className={`nav-item dropdown ${activeMenu === 'solutions' ? 'active' : ''}`} 
               onClick={() => setActiveMenu(prev => prev === 'solutions' ? 'home' : 'solutions')}>
             Solutions <IoIosArrowDown className="arrow-icon" />
           </li>
-          <li className="nav-item">Resources</li>
+          
+          {/* Added Dropdown Logic and relative positioning to Resources */}
+          <li className={`nav-item dropdown ${activeMenu === 'resources' ? 'active' : ''}`} 
+              onClick={() => setActiveMenu(prev => prev === 'resources' ? 'home' : 'resources')}
+              style={{ position: 'relative' }}>
+            Resources <IoIosArrowDown className="arrow-icon" />
+            
+            {/* Desktop Dropdown Menu for Resources */}
+            {isDesktop && activeMenu === 'resources' && (
+              <div className="resources-desktop-dropdown">
+                <a href="/blog">Blog</a>
+                <a href="/community">Community</a>
+                <a href="/faq">FAQ</a>
+              </div>
+            )}
+          </li>
+
           <li className="nav-item" onClick={() => setActiveMenu('business')}>Business Solutions</li>
         </ul>
 
@@ -72,6 +89,7 @@ const Navbar = () => {
         </div>
         <ul className="mobile-links">
           <li onClick={() => setIsMobileMenuOpen(false)}>Home</li>
+          
           <li onClick={() => setActiveMenu(activeMenu === 'solutions' ? 'home' : 'solutions')}>
             Solutions <IoIosArrowDown className={activeMenu === 'solutions' ? 'rotate' : ''} />
           </li>
@@ -81,7 +99,19 @@ const Navbar = () => {
                 <p><a href="/business">Business Pro</a></p>
             </div>
           )}
-          <li onClick={() => setIsMobileMenuOpen(false)}>Resources</li>
+
+          {/* Added Mobile Menu Logic for Resources */}
+          <li onClick={() => setActiveMenu(activeMenu === 'resources' ? 'home' : 'resources')}>
+            Resources <IoIosArrowDown className={activeMenu === 'resources' ? 'rotate' : ''} />
+          </li>
+          {activeMenu === 'resources' && (
+            <div className="mobile-sub-menu">
+                <p><a href="/blog">Blog</a></p>
+                <p><a href="/community">Community</a></p>
+                <p><a href="/faq">FAQ</a></p>
+            </div>
+          )}
+
           <li onClick={() => setIsMobileMenuOpen(false)}>Business Solutions</li>
           <li className="mobile-cta-item">
             <button className="get-started-btn mobile-btn">Get Started</button>

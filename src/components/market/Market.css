@@ -162,12 +162,14 @@
   background: transparent;
   color: #6B7280;
   width: 50%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .tab-btns.active {
   background: #001B3F;
   color: #FFFFFF;
   width: 50%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .toggle-display-card {

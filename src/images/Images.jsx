@@ -29,6 +29,10 @@ import offline from "../assets/Offline.svg";
 import tax from "../assets/Tax.svg";
 import businessMan from "../assets/BusinessMan.svg";
 import businessMain from "../assets/BusinessMain.svg";
+import Testimonial from "../assets/Testimonial.svg";
+import triangle from "../assets/triangle.svg";
+import triangleTwo from "../assets/triangleTwo.svg";
+import group from "../assets/Group.svg";
 
 const images = {
   Aroda,
@@ -59,7 +63,11 @@ const images = {
   offline,
   tax,
   businessMan,
-  businessMain
+  businessMain,
+  Testimonial,
+  triangle,
+  triangleTwo,
+  group
 
 };
 
