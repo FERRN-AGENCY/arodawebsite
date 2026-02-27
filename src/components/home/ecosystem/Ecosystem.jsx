@@ -9,9 +9,9 @@ const Ecosystem = () => {
 
   // Data for the statistical card cycle with dynamic image mapping
   const stats = [
-    { id: 0, value: 80, label: "Reduction in transaction disputes", image: images.ecosystem },
-    { id: 1, value: 95, label: "Faster inventory turnaround", image: images.ecosystem },
-    { id: 2, value: 50, label: "Increase in staff productivity", image: images.ecosystem }
+    { id: 0, value: 80, label: "More Accurate Business Records", image: images.ecosystem },
+    { id: 1, value: 70, label: "Reduction in transaction disputes", image: images.ecosystem },
+    { id: 2, value: 65, label: "Faster order fulfillment cycles", image: images.ecosystem }
   ];
 
   // --- AUTO-SWITCH ANIMATION (Same as Explore) ---
@@ -41,16 +41,21 @@ const Ecosystem = () => {
 
     return () => clearInterval(counter);
   }, [activeStat]);
-
+  const ecosystemLogos = [
+    { id: 1, src: images.ArodaMarketplace, alt: "Aroda Main Logo", class:"real"},
+    { id: 2, src: images.ArodaBusinessPro, alt: "Aroda Marketplace Logo", class:"real" }, // Swap with your actual image variable
+    { id: 3, src: images.bigAroda, alt: "Aroda Business Pro Logo", class:"notreal" }, // Swap with your actual image variable
+    { id: 4, src: images.bigAroda, alt: "Aroda Community Logo", class:"notreal" } // Swap with your actual image variable
+  ];
   return (
     <section className="ecosystem-container">
       {/* Top Logo Grid Section */}
       <div className="ecosystem-header">
         <h2 className="header-title">One Ecosystem. Multiple Pathways.</h2>
         <div className="logo-grid">
-          {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="logo-item">
-              <img src={images.bigAroda} alt="Aroda Logo" />
+          {ecosystemLogos.map((logo) => (
+            <div key={logo.id} className="logo-item">
+              <img src={logo.src} alt={logo.alt} className={logo.class}/>
             </div>
           ))}
         </div>

@@ -1,0 +1,107 @@
+/* --- Global Container --- */
+.faq-section {
+  padding: clamp(4rem, 8vh, 6rem) clamp(1.25rem, 5vw, 6rem);
+  background: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-container {
+  max-width: 1200px; /* Limits width to match screenshot proportions */
+  margin: 0 auto;
+}
+
+/* --- The 2-Column Grid --- */
+.faq-grid {
+  display: grid;
+
+  /* KEEP 2 COLUMNS */
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  max-width: 1140px; /* Same visual width as 557px x 2 + gap */
+  margin-bottom: 100px;
+}
+
+/* --- Individual FAQ Items --- */
+.faq-item {
+  background: #092E60;
+  border-radius: 16px;
+  padding: 31px 24px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-content: space-around;
+}
+
+.faq-item.active {
+  background: #F1F7FF;
+}
+
+.faq-question-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.faq-question {
+  font-size: clamp(0.95rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: #FFFFFF; /* Dark navy blue text */
+  margin: 0;
+  line-height: 24px;
+  transition: color 0.3s ease;
+}
+.active h4{
+  color: black;
+}
+
+/* Hover effect on the question text */
+.faq-item:hover .faq-question {
+ 
+}
+
+/* --- The specific Yellow Icon requested --- */
+.faq-icon {
+  color: #74AEFF; 
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevents icon from getting squished by long text */
+  width: 2rem;
+    height: 2rem;
+}
+.faq-icon svg {
+  width: 100%;
+  height: 100%;
+}
+/* --- Smooth Answer Reveal --- */
+.faq-answer-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #3A5D8C;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on mobile devices */
+  }
+}

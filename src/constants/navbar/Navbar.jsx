@@ -41,7 +41,7 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  // Handle sticky scroll visibility
+  // Handle sticky scroll visibility AND hide dropdowns on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -50,6 +50,11 @@ const Navbar = () => {
       // Navbar is visible if scrolling up OR if within 50px of the very top
       setNavbarVisible(isScrollingUp || currentScrollPos < 50);
       setPrevScrollPos(currentScrollPos);
+
+      // ADDED: Close any open dropdown menus as soon as the user starts scrolling
+      if (currentScrollPos > 10) { 
+        setActiveMenu('home');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -77,6 +82,7 @@ const Navbar = () => {
             
             {isDesktop && activeMenu === 'solutions' && (
               <div className="resources-desktop-dropdown solutions-dropdown">
+                
                 {/* Column 1: Aroda Market Place */}
                 <div className="dropdown-column">
                   <span className="dropdown-title"><a href="/merchants">Aroda market place</a></span>
@@ -92,6 +98,7 @@ const Navbar = () => {
                   <a href="/business#setup">Features</a>
                   <a href="/business#FAQ">FAQ</a>
                 </div>
+
               </div>
             )}
           </li>

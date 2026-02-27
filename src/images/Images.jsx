@@ -33,6 +33,8 @@ import Testimonial from "../assets/Testimonial.svg";
 import triangle from "../assets/triangle.svg";
 import triangleTwo from "../assets/triangleTwo.svg";
 import group from "../assets/Group.svg";
+import ArodaMarketplace from "../assets/ArodaMarketplace.jpg";
+import ArodaBusinessPro from "../assets/ArodaBusiness.jpg";
 
 const images = {
   Aroda,
@@ -67,7 +69,9 @@ const images = {
   Testimonial,
   triangle,
   triangleTwo,
-  group
+  group,
+  ArodaMarketplace,
+  ArodaBusinessPro
 
 };
 

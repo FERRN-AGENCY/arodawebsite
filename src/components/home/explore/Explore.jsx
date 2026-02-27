@@ -8,9 +8,9 @@ const Explore = () => {
 
   const tabs = [
     { id: 0, title: "Aroda Marketplace", desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", image: images.explore },
-    { id: 1, title: "Aroda Business Pro", desc: "Advanced tools for growing enterprises.", image: images.explore },
-    { id: 2, title: "Aroda Finance", desc: "Seamless financial management and payments.", image: images.explore },
-    { id: 3, title: "Aroda Logistics", desc: "Smart delivery and supply chain tracking.", image: images.explore }
+    { id: 1, title: "Aroda Business Pro", desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", image: images.explore },
+    { id: 2, title: "Aroda Finance", desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", image: images.explore },
+    { id: 3, title: "Aroda Logistics", desc: "Move goods with reliability. Delivery designed to keep business operations steady.", image: images.explore }
   ];
 
   // --- START AUTO-SWITCH ANIMATION CODE ---

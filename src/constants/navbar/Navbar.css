@@ -7,7 +7,6 @@
   left: 0;
   z-index: 1000; /* Increased to ensure it stays above all page content */
   width: 100%;
-  
   /* Added smooth animation for hiding/showing */
   transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
   
