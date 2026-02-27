@@ -178,7 +178,7 @@
   /* height: 550px; */
   border-radius: clamp(12px, 2vw, 20px);
   overflow: hidden;
-  margin-bottom: clamp(2rem, 4vw, 4rem);
+  margin-bottom: clamp(2rem, 2vw, 4rem);
 }
 
 .display-img {

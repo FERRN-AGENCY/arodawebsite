@@ -123,7 +123,8 @@
 }
 
 .tab-btn:hover:not(.active) {
-  background: rgba(10, 55, 102, 0.8);
+  background: #0F366A;
+  color: #FFFFFF;
 }
 
 /* Bottom Actions */

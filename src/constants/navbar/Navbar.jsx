@@ -1,16 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { images } from '../../images';
 import { IoIosArrowDown, IoMdMenu, IoMdClose } from "react-icons/io";
-import NavPopup from './NavPopup';
 import './Navbar.css';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
-  // Track desktop status to prevent NavPopup on mobile
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 960);
+  
+  // States for sticky scroll behavior
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [navbarVisible, setNavbarVisible] = useState(true);
+  
   const navRef = useRef(null);
 
+  // Handle clicks outside the dropdowns and window resizing
   useEffect(() => {
     const handleEvents = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -21,7 +25,7 @@ const Navbar = () => {
 
     const handleResize = () => {
       const desktopCheck = window.innerWidth > 960;
-      setIsDesktop(desktopCheck); // Update desktop status on resize
+      setIsDesktop(desktopCheck); 
 
       if (desktopCheck && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
@@ -37,8 +41,26 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Handle sticky scroll visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+      
+      // Navbar is visible if scrolling up OR if within 50px of the very top
+      setNavbarVisible(isScrollingUp || currentScrollPos < 50);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
+
   return (
-    <nav className={`navbar-wrapper ${isMobileMenuOpen ? 'mobile-nav-active' : ''}`} ref={navRef}>
+    <nav 
+      className={`navbar-wrapper ${isMobileMenuOpen ? 'mobile-nav-active' : ''} ${navbarVisible ? 'nav-visible' : 'nav-hidden'}`} 
+      ref={navRef}
+    >
       <div className="navbar">
         <div className="navbar-logo">
           <a href="/home"><img src={images.Aroda} alt="ARODA" /></a>
@@ -47,18 +69,39 @@ const Navbar = () => {
         <ul className="navbar-links desktop-only">
           <li className={`nav-item ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => setActiveMenu('home')}>Home</li>
           
+          {/* SOLUTIONS DROPDOWN (Two Columns) */}
           <li className={`nav-item dropdown ${activeMenu === 'solutions' ? 'active' : ''}`} 
-              onClick={() => setActiveMenu(prev => prev === 'solutions' ? 'home' : 'solutions')}>
+              onClick={() => setActiveMenu(prev => prev === 'solutions' ? 'home' : 'solutions')}
+              style={{ position: 'relative' }}>
             Solutions <IoIosArrowDown className="arrow-icon" />
+            
+            {isDesktop && activeMenu === 'solutions' && (
+              <div className="resources-desktop-dropdown solutions-dropdown">
+                {/* Column 1: Aroda Market Place */}
+                <div className="dropdown-column">
+                  <span className="dropdown-title"><a href="/merchants">Aroda market place</a></span>
+                  <a href="/merchants#section">About</a>
+                  <a href="/merchants#setup">Features</a>
+                  <a href="/merchants#FAQ">FAQ</a>
+                </div>
+
+                {/* Column 2: Aroda Business Pro */}
+                <div className="dropdown-column">
+                  <span className="dropdown-title"><a href="/business">Aroda business pro</a></span>
+                  <a href="/business#section">About</a>
+                  <a href="/business#setup">Features</a>
+                  <a href="/business#FAQ">FAQ</a>
+                </div>
+              </div>
+            )}
           </li>
           
-          {/* Added Dropdown Logic and relative positioning to Resources */}
+          {/* RESOURCES DROPDOWN */}
           <li className={`nav-item dropdown ${activeMenu === 'resources' ? 'active' : ''}`} 
               onClick={() => setActiveMenu(prev => prev === 'resources' ? 'home' : 'resources')}
               style={{ position: 'relative' }}>
             Resources <IoIosArrowDown className="arrow-icon" />
             
-            {/* Desktop Dropdown Menu for Resources */}
             {isDesktop && activeMenu === 'resources' && (
               <div className="resources-desktop-dropdown">
                 <a href="/blog">Blog</a>
@@ -80,6 +123,7 @@ const Navbar = () => {
         </div>
       </div>
       
+      {/* MOBILE MENU DRAWER */}
       <div 
         className={`mobile-drawer ${isMobileMenuOpen ? 'open' : 'drawer-hidden'}`}
         style={{ display: isMobileMenuOpen ? 'block' : 'none' }}
@@ -95,12 +139,18 @@ const Navbar = () => {
           </li>
           {activeMenu === 'solutions' && (
             <div className="mobile-sub-menu">
-                <p><a href="/merchants#FAQ">Market Place</a></p>
-                <p><a href="/business">Business Pro</a></p>
+                <span className="mobile-sub-title">Aroda market place</span>
+                <p><a href="/merchants#section">About</a></p>
+                <p><a href="/merchants#setup">Features</a></p>
+                <p><a href="/merchants#FAQ">FAQ</a></p>
+                
+                <span className="mobile-sub-title">Aroda business pro</span>
+                <p><a href="/business#section">About</a></p>
+                <p><a href="/business#setup">Features</a></p>
+                <p><a href="/business#FAQ">FAQ</a></p>
             </div>
           )}
 
-          {/* Added Mobile Menu Logic for Resources */}
           <li onClick={() => setActiveMenu(activeMenu === 'resources' ? 'home' : 'resources')}>
             Resources <IoIosArrowDown className={activeMenu === 'resources' ? 'rotate' : ''} />
           </li>
@@ -117,11 +167,6 @@ const Navbar = () => {
             <button className="get-started-btn mobile-btn">Get Started</button>
           </li>
         </ul>
-      </div>
-
-      {/* Logic Update: Only renders NavPopup if it's Desktop AND Solutions is active */}
-      <div className="desktop-only">
-        {isDesktop && activeMenu === 'solutions' && <NavPopup />}
       </div>
     </nav>
   );

@@ -43,7 +43,7 @@ const Hero = ({
         {/* Action Buttons */}
         <div className="home-hero-btn-group">
           <input type="text" name="" id="" className={input} placeholder={placeholder} />
-          <button className={`btn-secondary ${className}`}>{secondaryBtnText}</button>
+          <button className={`btn-secondary actual ${className}`}>{secondaryBtnText}</button>
           <button className="btn-primary">
             {primaryBtnText} <HiArrowRight className="btn-arrow" />
           </button>

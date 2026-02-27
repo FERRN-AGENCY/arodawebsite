@@ -1,18 +1,37 @@
-/* Navbar Container */
+/* Navbar Container - UPDATED FOR STICKY SCROLL */
 
 .navbar-wrapper {
-  position: relative; 
-  z-index: 100; /* Higher than the hero content's z-index: 2 */
+  /* Changed from relative to fixed */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Increased to ensure it stays above all page content */
   width: 100%;
+  
+  /* Added smooth animation for hiding/showing */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Added a background color so page text doesn't bleed through it when scrolling */
+  /* If your navbar is supposed to be transparent ONLY at the very top, you might need a JS class toggle for this */
+  /* background-color: #001B3F;  */
 }
+
+/* These classes are controlled by the React component to hide/show on scroll */
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-visible {
+  transform: translateY(0);
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   /* Padding 100px (6.25rem) as requested */
-  padding: clamp(1.2rem, 3vw, 2.1rem)
-         clamp(1rem, 6vw, 6.25rem); 
+  padding: clamp(1.2rem, 3vw, 2.1rem) clamp(1rem, 6vw, 6.25rem); 
   height: 6.125rem;
   background: transparent;
   width: 100%;
@@ -112,6 +131,7 @@
   
   transition: opacity 0.3s ease;
 }
+
 /* Styling for the new Resources desktop dropdown */
 .resources-desktop-dropdown {
   position: absolute;
@@ -142,12 +162,41 @@
   background: #F8FAFC;
   color: #FFC50F;
 }
+
+/* --- SOLUTIONS 2-COLUMN DROPDOWN --- */
+.solutions-dropdown {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex !important; 
+  flex-direction: row !important;
+  gap: 2.5rem; 
+  padding: 1.5rem 2rem !important; 
+  width: max-content;
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dropdown-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #001B3F;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  border-bottom: 1px solid #E6F0FF;
+  padding-bottom: 0.5rem;
+}
+
 .get-started-btn:hover {
-  opacity: 0.9;
+  opacity: 0.6;
 }
+
 .mobile-menu-toggle {
-  display: none ;
+  display: none;
 }
+
 /* --- Desktop vs Mobile visibility --- */
 @media (max-width: 960px) {
   /* Strictly hide the original desktop list and button */
@@ -194,7 +243,7 @@
       right: 0 !important;
       /* Force full viewport height */
       height: 100vh !important; 
-      height: 100svh !important; /* Use svh for better mobile browser support (prevents jumpy address bars) */
+      height: 100svh !important; /* Use svh for better mobile browser support */
       top: 0 !important;
       position: fixed !important;
       display: flex !important; /* Ensures the flex-direction column works */
@@ -223,14 +272,15 @@
     justify-content: space-between;
     align-items: center;
     transition: padding-left 0.3s ease;
-    
   }
+  
   a{
     border: none;
     margin-bottom: 1rem;
     text-decoration: none;
     color: #011633;
   }
+  
   .mobile-links li:active {
     padding-left: 10px;
     color: #FFC50F;
@@ -253,6 +303,20 @@
     margin: 0;
   }
 
+  /* Mobile Sub-menu Titles */
+  .mobile-sub-title {
+    display: block;
+    font-weight: 700;
+    color: #001B3F;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .mobile-sub-menu p {
+    margin-left: 1rem; 
+  }
+
   /* Mobile CTA Button */
   .mobile-btn {
     width: 50%;
@@ -261,34 +325,35 @@
     font-size: 1.1rem !important;
     box-shadow: 0 4px 12px rgba(255, 197, 15, 0.3);
   }
+  
   .drawer-header {
-  display: flex;
-  justify-content: flex-end; /* Pushes icon to the right */
-  width: 100%;
-  padding-bottom: 2rem;
-}
+    display: flex;
+    justify-content: flex-end; /* Pushes icon to the right */
+    width: 100%;
+    padding-bottom: 2rem;
+  }
 
-.drawer-close-icon {
-  font-size: 2.5rem; /* Large enough to tap easily */
-  color: #011633;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
+  .drawer-close-icon {
+    font-size: 2.5rem; /* Large enough to tap easily */
+    color: #011633;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
 
-.drawer-close-icon:active {
-  transform: scale(0.9); /* Feedback on tap */
-}
+  .drawer-close-icon:active {
+    transform: scale(0.9); /* Feedback on tap */
+  }
 
-/* Ensure the drawer itself has 100% height and proper layering */
-.mobile-drawer.open {
-  right: 0 !important;
-  height: 100vh !important;
-  height: 100svh !important; /* Mobile safe height */
-  top: 0 !important;
-  position: fixed !important;
-  padding: 20px 30px; /* Adjust top padding since we have the header now */
-  z-index: 10002; /* Ensure it stays above everything */
-}
+  /* Ensure the drawer itself has 100% height and proper layering */
+  .mobile-drawer.open {
+    right: 0 !important;
+    height: 100vh !important;
+    height: 100svh !important; /* Mobile safe height */
+    top: 0 !important;
+    position: fixed !important;
+    padding: 20px 30px; /* Adjust top padding since we have the header now */
+    z-index: 10002; /* Ensure it stays above everything */
+  }
 }
 
 /* Hard-coded hidden states for safety */

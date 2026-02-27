@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { images } from '../../../images';
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { HiArrowRight } from "react-icons/hi";
 import './Explore.css';
 
 const Explore = () => {
@@ -80,9 +80,9 @@ const Explore = () => {
       </div>
 
       <div className="explore-actions">
-        <button className="btn-secondary">Explore Solutions</button>
+        <button className="btn-secondary actual">Explore Solutions</button>
         <button className="btn-primary">
-          Get Started <IoIosArrowRoundForward className="btn-arrow" />
+          Get Started <HiArrowRight className="btn-arrow" />
         </button>
       </div>
     </section>

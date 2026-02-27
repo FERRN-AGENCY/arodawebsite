@@ -23,9 +23,9 @@
 
 .home-hero-content {
   /* Scales horizontal padding: min 1.5rem on mobile to 9.25rem on desktop */
-  padding: 0 clamp(1.5rem, 8vw, 9.25rem); 
+  padding: 3rem clamp(1.5rem, 10vw, 9.25rem); 
   /* Scales margin-top: min 5rem to 8rem */
-  margin-top: clamp(3rem, 13vh, 8rem);
+  margin-top: clamp(3rem, 19vh, 8rem);
   max-width: 55rem;
   position: relative;
   z-index: 2;
@@ -72,7 +72,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1.0625rem 1.3125rem;
+  padding: 1.25rem 2rem;
   gap: 0.625rem;
   border: none;
   background: rgba(255, 255, 255, 0.08); 
@@ -86,8 +86,10 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
-.btn-secondary:hover {
+/* .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+} */
+.actual:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -105,7 +107,10 @@
   gap: 0.5rem;
   cursor: pointer;
 }
-
+.btn-primary:hover {
+/* NEW: Richer gold color on hover */
+  opacity: 0.6;
+}
 .btn-arrow {
   font-size: 1.2rem;
 }

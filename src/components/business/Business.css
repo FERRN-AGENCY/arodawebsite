@@ -1,6 +1,6 @@
 /* --- Global Section Container --- */
 .business-container {
-  padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 8vw, 11.3125rem);
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 8vw, 11.3125rem) 0;
   background: #FFFFFF;
   font-family: 'Poppins', sans-serif;
   color: #001B3F;
@@ -172,7 +172,7 @@
 }
 
 .control-card:hover {
-  transform: translateY(-5px);
+  opacity: 0.9;
 }
 
 .icon-wrapper {

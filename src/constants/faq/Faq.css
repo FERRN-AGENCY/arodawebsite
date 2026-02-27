@@ -9,7 +9,7 @@
 
 .faq-main-title {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 700;
   color: #011633;
   margin-bottom: 60px;
@@ -54,7 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.2rem;
+  margin: 1.2rem 0;
 }
 
 .faq-answer-row {
@@ -177,8 +177,7 @@
 }
 
 .cta-block-btn:hover {
-  transform: scale(1.05);
-  background: #f5bc0d;
+  opacity: 0.6;
 }
 
 .cta-block-btn svg {

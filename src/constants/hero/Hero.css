@@ -23,7 +23,7 @@
 
 .hero-content {
   /* Fluid vertical spacing */
-  margin: clamp(3rem, 10vh, 5rem) auto;
+  margin: 9rem auto clamp(3rem, 10vh, 5rem) auto;
 
   max-width: 65rem;
   width: 100%;
@@ -137,8 +137,8 @@
 }
 @media (max-width: 600px) {
   .hero-content {
-    padding: 0 1.5rem;
-    margin: 3rem auto;
+    padding: 3.5rem 1.5rem 0 1.5rem;
+    margin: 5rem auto;
   }
 
   .hero-title {

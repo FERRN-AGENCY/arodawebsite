@@ -16,7 +16,12 @@
   height: fit-content;
   width: 100%; /* Ensures the grid spans the entire screen width */
 }
-
+.community-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  height: 100%;
+}
 /* =========================================
    LEFT SIDE: TEXT & LIST
    ========================================= */
@@ -93,6 +98,7 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  width: fit-content;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 

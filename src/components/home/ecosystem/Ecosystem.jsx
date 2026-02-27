@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { images } from '../../../images';
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { HiArrowRight } from "react-icons/hi";
 import './Ecosystem.css';
 
 const Ecosystem = () => {
@@ -26,7 +26,7 @@ const Ecosystem = () => {
   useEffect(() => {
     let start = 0;
     const end = stats[activeStat].value;
-    const duration = 5500; 
+    const duration = 2500; 
     const increment = end / (duration / 16);
 
     const counter = setInterval(() => {
@@ -110,7 +110,7 @@ const Ecosystem = () => {
                 </p>
               </div>
               <button className="get-started-btns">
-                Get Started <IoIosArrowRoundForward className="btn-arrow" />
+                Get Started <HiArrowRight className="btn-arrow" />
               </button>
             </div>
           </div>
