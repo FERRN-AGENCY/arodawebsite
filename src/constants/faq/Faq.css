@@ -9,7 +9,7 @@
 
 .faq-main-title {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 48px);
   font-weight: 700;
   color: #011633;
   margin-bottom: 60px;

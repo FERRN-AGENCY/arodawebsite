@@ -32,13 +32,16 @@ const Market = () => {
         <div className="intro-image-wrapper">
           <img src={images.officeDesk} alt="Modern Office" className="intro-img" />
         </div>
-        <div className="intro-text">
-          <p>Buying online shouldn't require luck.</p>
-          <p>Selling online shouldn't feel like shouting into noise.</p>
-          <p className="highlight-text">
-            Aroda Marketplace is built for people who are tired of guessing who to trust and just want things to work.
-          </p>
-        </div>
+            <div className="intro-text">
+                <p className="loading-paragraph">
+                    <span className="load-line">Buying online shouldn't require luck.</span>
+                    <span className="load-line">Selling online shouldn't feel like shouting into noise.</span>
+                    
+                    {/* The long sentence is now split into two parts so they load sequentially */}
+                    <span className="load-line">Aroda Marketplace is built for people who are tired of guessing</span>
+                    <span className="load-line">who to trust and just want things to work.</span>
+                </p>
+            </div>
       </div>
 
       {/* --- Steps Section (1-4 Counter) --- */}

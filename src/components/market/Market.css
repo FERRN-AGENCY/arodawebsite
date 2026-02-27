@@ -26,21 +26,67 @@
   object-fit: cover;
 }
 
-.intro-text p {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  font-weight: 500;
-  margin-bottom: clamp(0.25rem, 1vw, 0.5rem);
-  color: #001B3F;
+.intro-text {
+  max-width: 1200px;
 }
 
-.intro-text .highlight-text {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  font-weight: 500;
-  color: rgba(64, 145, 255, 0.5); /* Faded blue as requested */
-  max-width: 800px;
-  line-height: 1.4;
+.loading-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
+.load-line {
+  display: block; 
+  margin-bottom: 0.8rem; 
+  
+  /* The gradient: 50% solid Dark Blue, 50% faded blue */
+  background-image: linear-gradient(to right, #001B3F 50%, rgba(64, 145, 255, 0.5) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0; /* Starts faded */
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Assigning the ping-pong loops (12 seconds total) */
+.load-line:nth-child(1) { animation: wipeLine1 12s infinite ease-in-out; }
+.load-line:nth-child(2) { animation: wipeLine2 12s infinite ease-in-out; }
+.load-line:nth-child(3) { animation: wipeLine3 12s infinite ease-in-out; }
+.load-line:nth-child(4) { animation: wipeLine4 12s infinite ease-in-out; }
+
+/* --- THE KEYFRAMES --- */
+
+/* Line 1: First to load, last to unload */
+@keyframes wipeLine1 {
+  0%, 10%   { background-position: 100% 0; } /* Unloaded */
+  20%, 80%  { background-position: 0% 0; }   /* Loaded */
+  90%, 100% { background-position: 100% 0; } /* Unloaded */
+}
+
+/* Line 2 */
+@keyframes wipeLine2 {
+  0%, 20%   { background-position: 100% 0; } 
+  30%, 70%  { background-position: 0% 0; }   
+  80%, 100% { background-position: 100% 0; } 
+}
+
+/* Line 3 */
+@keyframes wipeLine3 {
+  0%, 30%   { background-position: 100% 0; } 
+  40%, 60%  { background-position: 0% 0; }   
+  70%, 100% { background-position: 100% 0; } 
+}
+
+/* Line 4: Last to load, first to unload */
+@keyframes wipeLine4 {
+  0%, 40%   { background-position: 100% 0; } 
+  50%       { background-position: 0% 0; }   /* Barely holds before reversing */
+  60%, 100% { background-position: 100% 0; } 
+}
 /* --- Order Section (1-4 Counter) --- */
 .section-title {
   font-size: clamp(1.8rem, 3vw, 2.8rem);
@@ -140,7 +186,6 @@
 .section-subtitle {
   color: #7A9BC7;
   margin-top: clamp(-1.5rem, -3vw, -3rem);
-  margin-bottom: clamp(1.5rem, 3vw, 3rem);
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   max-width: 500px;
   margin: 0 auto clamp(1.5rem, 3vw, 3rem) auto;
@@ -235,6 +280,7 @@
 }
 
 .secondary-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: #F0F4F8;
   border: none;
   padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 28px);
@@ -242,6 +288,7 @@
   font-weight: 600;
   color: #001B3F;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .get-started-btnd {
