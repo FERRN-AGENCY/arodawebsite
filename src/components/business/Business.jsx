@@ -78,15 +78,15 @@ const Business = () => {
           <img src={images.darkroom} alt="Quiet losses in business" className="losses-img" />
         </div>
         
-        <div className="losses-text-content">
-          <p className="dark-text">
-            Sales go unrecorded.<br/>
-            Stock reduces without explanation.<br/>
-            Numbers don't match reality.
-          </p>
-          <p className="light-blue-text">
-            Without visibility, you're reacting instead of managing.
-          </p>
+        <div className="intro-text">
+            <p className="loading-paragraph">
+                <span className="load-line">Sales go unrecorded.</span>
+                <span className="load-line">Stock reduces without explanation.</span>
+                
+                {/* The long sentence is now split into two parts so they load sequentially */}
+                <span className="load-line">Numbers don't match reality.</span>
+                <span className="load-line">Without visibility, you're reacting instead of managing.</span>
+            </p>
         </div>
       </div>
 

@@ -3,6 +3,60 @@ body{
     margin: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+/* =========================================
+   CUSTOM TRANSPARENT SCROLLBAR
+   ========================================= */
+
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 8px;  /* Made it slightly thinner so it looks sleeker floating */
+  height: 8px;
+}
+
+/* Make the track (background) completely invisible */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* The draggable handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #001B3F; /* Aroda Dark Blue */
+  border-radius: 0px;
+}
+
+/* The handle when you hover over it */
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC50F; /* Aroda Gold */
+  cursor: pointer;
+}
+
+/* Explicitly hide the top and bottom up/down arrows */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Optional: Hide the corner where horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* Aggressively hide the top and bottom up/down arrows */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* Target the exact up (decrement) and down (increment) arrows specifically */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: none !important;
+}
+
+/* Also ensure no background track appears behind where the buttons used to be */
+::-webkit-scrollbar-track-piece {
+  background: transparent !important;
+}
 h2, h3, p{
     margin: 0px;
 }
