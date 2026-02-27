@@ -171,10 +171,6 @@
   transition: transform 0.3s ease;
 }
 
-.control-card:hover {
-  opacity: 0.9;
-}
-
 .icon-wrapper {
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
   width: clamp(40px, 10vw, 150px);
@@ -229,7 +225,7 @@
 
 .large-desc {
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
-  max-width: 80%;
+  max-width: 100%;
   color: #C8E0FF;
 }
 
