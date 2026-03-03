@@ -137,8 +137,6 @@ const Navbar = () => {
               </div>
             )}
           </li>
-
-          <li className="nav-item" onClick={() => window.location.href = '/business'}>Business Solutions</li>
         </ul>
 
         <div className="navbar-cta desktop-only">
@@ -189,8 +187,6 @@ const Navbar = () => {
                 <p><a href="/faq">FAQ</a></p>
             </div>
           )}
-
-          <li onClick={() => window.location.href = '/business'}>Business Solutions</li>
           <li className="mobile-cta-item">
             <button className="get-started-btn mobile-btn">Get Started</button>
           </li>
