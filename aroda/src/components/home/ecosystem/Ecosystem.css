@@ -1,9 +1,8 @@
 /* --- Container & Typography --- */
 .ecosystem-container {
-  /* width: 100%; */
   /* Using the 11.3125rem (181px) padding logic we established earlier */
   padding: clamp(4rem, 10vh, 11.3125rem) clamp(1.25rem, 9vw, 11.3125rem);
-  background: #FFFFFF; /* The main section background in the screenshot is light */
+  background: #FFFFFF; 
   color: #011633;
   font-family: 'Poppins', sans-serif;
 }
@@ -23,23 +22,46 @@
   justify-content: space-between;
   gap: 1.5rem;
   margin-bottom: 8rem;
+  flex-wrap: wrap; /* NEW: Allows the grid to wrap safely on tablets */
 }
 
 .logo-item {
-  width: 202px;
-  height: 172px;
-  background: #F8F9FA; /* Light grey boxes from screenshot 3 */
+  flex: 1; /* NEW: Allows the boxes to shrink and grow evenly */
+  width: 100%;
+  max-width: 202px; /* NEW: Caps the size so they don't get too massive */
+  min-width: 120px; /* NEW: Prevents them from getting too tiny before mobile */
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  overflow: hidden; /* NEW: Prevents image bleed */
 }
-.real{
+
+/* NEW IMAGE RULES: 
+  Added 'object-fit: contain' to all classes to ensure the logos 
+  scale proportionally and never stretch or warp! 
+*/
+.semireal {
     width: 100%;
+    height: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    background-color: #FFFFFF;
+}
+.real {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    object-fit: contain;
+    padding: 1.5rem; /* Adds clean breathing room around the logo */
 }
 .notreal {
   width: 60%;
+  height: auto;
+  max-height: 60%;
   opacity: 0.3;
+  object-fit: contain;
 }
 
 /* --- Main Title --- */
@@ -52,6 +74,7 @@
   margin-bottom: 3rem;
   max-width: 963px;
 }
+
 /* Make sure the image card can act as an anchor for the absolute layers */
 .image-card {
   position: relative;
@@ -73,20 +96,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensures the image fits cleanly inside the box */
-  
+  object-fit: contain; 
   z-index: 1;
-  opacity: 0; /* Hidden by default */
-  
-  /* The smooth 1-second cross-fade */
+  opacity: 0; 
   transition: opacity 1s ease-in-out; 
 }
 
-/* Only the active layer becomes visible */
 .ecosystem-img-layer.active {
   opacity: 1;
-  z-index: 2; /* Pulls the active image slightly forward */
+  z-index: 2; 
 }
+
 /* --- The Grid System --- */
 .ecosystem-grid {
   display: flex;
@@ -94,23 +114,21 @@
   gap: 1.5rem;
 }
 
-.grid-top{
+.grid-top {
   height: 366px;
 }
 
 .grid-top, .grid-bottom {
   display: grid;
-  grid-template-columns: 1.8fr 1fr; /* Staggered width for top row */
+  grid-template-columns: 1.8fr 1fr; 
   gap: 1.5rem;
 }
 
 .grid-bottom {
-  grid-template-columns: 1fr 1.7fr; /* Inverted staggered width for bottom row */
+  grid-template-columns: 1fr 1.7fr; 
 }
 
 /* --- Individual Cards --- */
-
-/* Big Meeting Image */
 .image-card {
   height: 100%;
   border-radius: 16px;
@@ -123,7 +141,6 @@
   object-fit: cover;
 }
 
-/* 80% Stat Card */
 .stat-card {
   background: linear-gradient(203.67deg, #124C98 3.24%, #061932 84.76%);
   border-radius: 16px;
@@ -149,7 +166,6 @@
   max-width: 80%;
 }
 
-/* Blue Aroda Logo Card (Bottom Left) */
 .logo-card {
   background: #001B3F;
   height: 280px;
@@ -157,7 +173,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Topography line background effect if your image is transparent */
   background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
   background-size: 24px 24px;
 }
@@ -167,7 +182,6 @@
   height: 50%;
 }
 
-/* Business Simplified Card (Bottom Right) */
 .simplified-card {
   background: linear-gradient(89.63deg, #061932 41.38%, #1F79EF 96.88%);
   border-radius: 16px;
@@ -205,12 +219,10 @@
   height: 4px;
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
-  /* border-radius: 10px; */
 }
 
 .gap-line.active {
   background: #4091FF;
-  /* Adding the 10s animation logic we used in the previous component */
   position: relative;
   overflow: hidden;
 }
@@ -246,9 +258,13 @@
   opacity: 0.6;
 }
 
+@keyframes fillProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
 /* --- Responsive Magic --- */
 @media (max-width: 1024px) {
-  
   .simplified-card {
     flex-direction: column;
     align-items: flex-start;
@@ -261,63 +277,59 @@
   }
 
   .logo-grid {
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr; */
     margin-bottom: 4rem;
   }
+  
   .grid-top{
     grid-template-columns: 1.5fr 1fr;
   }
 }
 
-@keyframes fillProgress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
 /* ========== Tablet (765px and below) ========== */
 @media (max-width: 769px) {
-    .stat-value{
+  .stat-value {
     font-size: clamp(3rem, 8vw, 5rem);
-    }
-    .stat-label{
+  }
+  .stat-label {
     font-size: 1.2rem;
-    }
-    .grid-top{
-      height: 290px;
-    }
+  }
+  .grid-top {
+    height: 290px;
+  }
   .grid-bottom p {
     font-size: 0.95rem;
     line-height: 1.5rem;
   }
-
 }
-
 
 /* ========== Mobile (480px and below) ========== */
 @media (max-width: 480px) {
-
-  /* GRID TOP → 1 by 1 */
-  .logo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* GRID BOTTOM → 1 by 1 */
+  /* GRID TOP & BOTTOM → 1 by 1 */
   .grid-bottom, .grid-top {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .logo-item{
-    width: 90%;
-    height: fit-content;
-    padding: 1.5rem 0rem;
-    margin-bottom: 1rem;
-  }
-  .grid-top{
+  
+  .grid-top {
     height: fit-content;
   }
-  /* Optional: slightly smaller text for small phones */
+
+  /* NEW: Perfect 2x2 grid for mobile logos */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* NEW: Ensures boxes stretch cleanly across their grid slots */
+  .logo-item {
+    width: 100%;
+    max-width: 100%;
+    height: 100px; /* Slightly shorter on mobile so they don't look blocky */
+    margin: 0;
+  }
+
   .grid-bottom h3 {
     font-size: 1.2rem;
   }
@@ -325,11 +337,12 @@
   .grid-bottom p {
     font-size: 0.9rem;
   }
-  .main-title{
+  
+  .main-title {
     font-size: 1.5rem;
   }
+  
   .image-card {
     height: 250px;
   }
-
 }

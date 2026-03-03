@@ -7,7 +7,7 @@ const Market = () => {
   const [activeOrderStep, setActiveOrderStep] = useState(0);
   const [activeTab, setActiveTab] = useState('merchants');
   
-  // NEW: State and Ref for the Scroll Animation
+  // State and Ref for the Scroll Animation
   const [isIntroVisible, setIsIntroVisible] = useState(false);
   const introRef = useRef(null);
 
@@ -26,22 +26,20 @@ const Market = () => {
     return () => clearInterval(timer);
   }, [orderSteps.length]);
 
-  // --- NEW: INTERSECTION OBSERVER FOR SCROLL TRIGGER ---
+  // --- INTERSECTION OBSERVER FOR SCROLL TRIGGER ---
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // When the element enters the screen, trigger the animation state
         if (entry.isIntersecting) {
           setIsIntroVisible(true);
         } else {
-          // Optional: Reset it when it leaves the screen so it animates again next time they scroll down
           setIsIntroVisible(false); 
         }
       },
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.3 // Triggers when 30% of the text is visible
+        threshold: 0.3 
       }
     );
 
@@ -62,7 +60,6 @@ const Market = () => {
           <img src={images.MarketplaceHeader} alt="Modern Office" className="intro-img" />
         </div>
         
-        {/* We attach the ref here, and conditionally add the 'animate-on-scroll' class */}
         <div className="intro-text" ref={introRef}>
             <p className={`loading-paragraph ${isIntroVisible ? 'animate-on-scroll' : ''}`}>
                 <span className="load-line">Buying online shouldn't require luck.</span>
@@ -73,7 +70,6 @@ const Market = () => {
         </div>
       </div>
 
-      {/* --- THE REST OF YOUR CODE REMAINS EXACTLY THE SAME --- */}
       {/* --- Steps Section (1-4 Counter) --- */}
       <div className="order-section" >
         <h2 className="section-title" id='section'>How the platform keeps things in order</h2>
@@ -131,12 +127,13 @@ const Market = () => {
           </button>
         </div>
 
+        {/* Dynamic Display Card */}
         <div className="toggle-display-card">
           {activeTab === 'merchants' ? (
             <div className="display-content fade-in">
               <img src={images.Merchants} alt="Merchant interface" className="display-img" />
               <div className="display-overlay">
-                <h3>Buy without second-guessing.</h3>
+                <h3>Sell where excellent service is rewarded</h3>
                 <p>Good sellers often get buried on noisy platforms. On Aroda, showing up well over time actually matters.</p>  
               </div>
             </div>
@@ -144,25 +141,38 @@ const Market = () => {
             <div className="display-content fade-in">
               <img src={images.Buyers} alt="Happy Buyer" className="display-img" />
               <div className="display-overlay">
-                <h3>Scale without the stress.</h3>
-                <p>Advanced tools for inventory, payments, and customer reach.</p>
+                <h3>Buy without second-guessing.</h3>
+                <p>Shopping should feel simple. With verified merchants, platform-managed transaction and clear standards, you can buy with confidence.</p>
               </div>
             </div>
           )}
         </div>
 
+        {/* Dynamic Feature Tags */}
         <div className="feature-tags">
-          <span>Buyers who actully buy products</span>
-          <span>Less pressure to promote only on certain</span>
-          <span>Credibility that stays with every order</span>
-          <span>Faster buying system that improves factory growth</span>
-          <span>Visibility that is hard earned, not paid</span>
+          {activeTab === 'merchants' ? (
+            <>
+              <span>Buyers who are ready to purchase</span>
+              <span>Less pressure to compete only on price</span>
+              <span>Credibility that builds with every order</span>
+              <span>Faster payouts as performance history grows</span>
+              <span>Visibility tied to behaviour, not hype</span>
+            </>
+          ) : (
+            <>
+              <span>Sellers are screened before listing</span>
+              <span>Listings follow clear standards</span>
+              <span>Repeated issues lead to restrictions</span>
+              <span>Support stays involved until issues are resolved</span>
+            </>
+          )}
         </div>
 
+        {/* Dynamic CTA Buttons */}
         <div className="order-actions bottom-cta">
            <button className="secondary-btn">Explore Solutions</button>
            <button className="get-started-btnd">
-             Get Started <HiArrowRight />
+             {activeTab === 'merchants' ? 'Become a Seller' : 'Shop on Aroda Marketplace'} <HiArrowRight />
            </button>
         </div>
       </div>

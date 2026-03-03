@@ -35,6 +35,7 @@ import triangleTwo from "../assets/triangleTwo.svg";
 import group from "../assets/Group.svg";
 import ArodaMarketplace from "../assets/ArodaMarketplace.jpg";
 import ArodaBusinessPro from "../assets/ArodaBusiness.jpg";
+import ArodaFinance from "../assets/ArodaFinance.png";
 import Ecosystem1 from "../assets/Ecosystem1.png";
 import Ecosystem2 from "../assets/Ecosystem2.png";
 import Ecosystem3 from "../assets/Ecosystem3.png";
@@ -91,6 +92,7 @@ const images = {
   group,
   ArodaMarketplace,
   ArodaBusinessPro,
+  ArodaFinance,
   Ecosystem1,
   Ecosystem2,
   Ecosystem3,
