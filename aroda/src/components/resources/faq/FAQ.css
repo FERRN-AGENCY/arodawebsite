@@ -1,0 +1,88 @@
+/* --- Global Container --- */
+.faq-section {
+  padding: clamp(4rem, 8vh, 6rem) clamp(1.25rem, 5vw, 6rem);
+  background: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-container {
+  max-width: 1200px; /* Limits width to match screenshot proportions */
+  margin: 0 auto;
+}
+
+/* --- The 2-Column Grid --- */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(2rem, 6vw, 6rem); /* Wide gap between columns like the image */
+  row-gap: 0; 
+}
+
+/* --- Individual FAQ Items --- */
+.faq-item {
+  border-bottom: 2.5px solid  #0B274D52; /* Light grey/blue line matching image */
+  padding: 1.5rem 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-question-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.faq-question {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  color: #001B3F; /* Dark navy blue text */
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on the question text */
+.faq-item:hover .faq-question {
+  color: #1A56A8; 
+}
+
+/* --- The specific Yellow Icon requested --- */
+.faq-icon {
+  color: #FFBA07; 
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevents icon from getting squished by long text */
+}
+
+/* --- Smooth Answer Reveal --- */
+.faq-answer-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 900px) {
+  .faq-grid {
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr; /* Stacks to 1 column on mobile devices */
+  }
+}

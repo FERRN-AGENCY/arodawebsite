@@ -1,0 +1,91 @@
+import React, { useState, useEffect } from 'react';
+import { images } from '../../../images';
+import { HiArrowRight } from "react-icons/hi";
+import './Explore.css';
+
+const Explore = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tabs = [
+    { id: 0, title: "Aroda Marketplace", desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", image: images.Marketplace },
+    { id: 1, title: "Aroda Business Pro", desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", image: images.BusinessPro },
+    { id: 2, title: "Aroda Finance", desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", image: images.Finance },
+    { id: 3, title: "Aroda Logistics", desc: "Move goods with reliability. Delivery designed to keep business operations steady.", image: images.Logistics }
+  ];
+
+  // --- START AUTO-SWITCH ANIMATION CODE ---
+  useEffect(() => {
+    // 10000ms = 10 seconds
+    const autoPlayDuration = 10000; 
+
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % tabs.length);
+    }, autoPlayDuration);
+
+    return () => clearInterval(interval);
+  }, [tabs.length]); 
+  // --- END AUTO-SWITCH ANIMATION CODE ---
+
+  return (
+    <section 
+      className="explore-container"
+      style={{ backgroundImage: `url(${images.explorebg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+    >
+      <h2 className="explore-title">
+        Smart Tools for Every Step of Your Business Journey
+      </h2>
+
+      <div className="explore-main-grid">
+        <div className="explore-card fade-in">
+          
+          {/* NEW: Map out all background images so they pre-load and fade smoothly */}
+          {tabs.map((tab, index) => (
+            <div 
+              key={tab.id}
+              className={`explore-bg-layer ${activeTab === index ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${tab.image})` }}
+            ></div>
+          ))}
+
+          {/* OVERLAY CONTENT */}
+          <div className="card-overlay-content">
+            <h3>{tabs[activeTab].title}</h3>
+            <p>{tabs[activeTab].desc}</p>
+            
+            <div className="progress-bars">
+              {tabs.map((_, index) => (
+                <div 
+                  key={index} 
+                  className={`gap-line ${activeTab === index ? 'active' : ''}`}
+                  onClick={() => setActiveTab(index)}
+                  style={{ cursor: 'pointer' }} 
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="explore-tabs">
+          {tabs.map((tab) => (
+            <button 
+              key={tab.id}
+              className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.title}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="explore-actions">
+        <button className="btn-secondary actual">Explore Solutions</button>
+        <button className="btn-primary">
+          Get Started <HiArrowRight className="btn-arrow" />
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default Explore;

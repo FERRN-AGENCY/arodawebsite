@@ -1,0 +1,361 @@
+/* Navbar Container - UPDATED FOR STICKY SCROLL */
+
+.navbar-wrapper {
+  /* Changed from relative to fixed */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Increased to ensure it stays above all page content */
+  width: 100%;
+  /* Added smooth animation for hiding/showing */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Added a background color so page text doesn't bleed through it when scrolling */
+  /* If your navbar is supposed to be transparent ONLY at the very top, you might need a JS class toggle for this */
+  /* background-color: #001B3F;  */
+}
+
+/* These classes are controlled by the React component to hide/show on scroll */
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-visible {
+  transform: translateY(0);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* Padding 100px (6.25rem) as requested */
+  padding: clamp(1.2rem, 3vw, 2.1rem) clamp(1rem, 6vw, 6.25rem); 
+  height: 6.125rem;
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: auto 0;
+}
+.navbar-logo a{
+  margin-bottom: 0px;
+}
+.navbar-logo img {
+  /* Image dimensions from your spec: 130px width, 40px height */
+  width: 8.125rem; 
+  height: 2.5rem;
+  opacity: 1;
+}
+
+.navbar-logo span {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  margin-left: -1rem; /* Adjusting for potential whitespace in logo image */
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  /* General text styling from your spec */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;       /* 16px */
+  line-height: 1.25rem;  /* 20px */
+  color: #A6CBFF;        /* Default for other links */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Active Home link styling */
+.nav-item.active {
+  color: #FFC50F;
+}
+
+.arrow-down {
+  margin-left: 0.3rem;
+  font-size: 1rem;
+  padding: 0px;
+}
+
+/* Button Section */
+.navbar-cta {
+  display: flex;
+  align-items: center;
+}
+
+.get-started-btn {
+  /* Layout from Frame 2121457601 specs */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  /* Dimensions converted to rem */
+  width: 8.0625rem;      /* 129px */
+  height: 2.375rem;      /* 38px */
+  
+  /* Padding converted to rem */
+  padding: 0.0625rem 1.5125rem; /* 17px 21px */
+  gap: 0.625rem;         /* 10px */
+  background: #FFC50F;
+  border-radius: 0.5rem; /* 8px */
+  border: none;
+  cursor: pointer;
+
+  /* Font styling */
+  font-weight: 600;
+  font-size: 0.875rem;   /* 14px */
+  line-height: 1.125rem; /* 18px */
+  color: #011633;
+  text-shadow: 0px 0px 5.3px rgba(252, 103, 0, 0.15);
+  
+  transition: opacity 0.3s ease;
+}
+
+/* Styling for the new Resources desktop dropdown */
+.resources-desktop-dropdown {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.resources-desktop-dropdown a {
+  text-decoration: none;
+  color: #001B3F;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.resources-desktop-dropdown a:hover {
+  background: #F8FAFC;
+  color: #FFC50F;
+}
+
+/* --- SOLUTIONS 2-COLUMN DROPDOWN --- */
+.solutions-dropdown {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex !important; 
+  flex-direction: row !important;
+  gap: 2.5rem; 
+  padding: 1.5rem 2rem !important; 
+  width: max-content;
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dropdown-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #001B3F;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  border-bottom: 1px solid #E6F0FF;
+  padding-bottom: 0.5rem;
+}
+
+.get-started-btn:hover {
+  opacity: 0.6;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* --- Desktop vs Mobile visibility --- */
+@media (max-width: 960px) {
+  /* Strictly hide the original desktop list and button */
+  .navbar-links, 
+  .navbar-cta.desktop-only {
+    display: none !important;
+  }
+
+  /* Ensure the toggle is visible and clickable */
+  .mobile-menu-toggle {
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #FFFFFF; /* Matches your hero text */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  /* The Toggle turns dark when the drawer (white bg) is open */
+  .mobile-nav-active .mobile-menu-toggle {
+    color: #011633;
+  }
+
+  /* --- Beautified Mobile Drawer --- */
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen to the right */
+    width: 85%;    /* Slight gap on the left for aesthetics */
+    height: 100vh;
+    background: #FFFFFF;
+    z-index: 10000;
+    padding: 100px 30px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    /* Smooth Animation */
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Animation class called by state */
+  .mobile-drawer.open {
+      right: 0 !important;
+      /* Force full viewport height */
+      height: 100vh !important; 
+      height: 100svh !important; /* Use svh for better mobile browser support */
+      top: 0 !important;
+      position: fixed !important;
+      display: flex !important; /* Ensures the flex-direction column works */
+      flex-direction: column;
+  }
+
+  /* Styled Mobile Links */
+  .mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mobile-links li{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #011633;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f4f8;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding-left 0.3s ease;
+  }
+  
+  a{
+    border: none;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #011633;
+  }
+  
+  .mobile-links li:active {
+    padding-left: 10px;
+    color: #FFC50F;
+  }
+
+  /* Sub-menu styling */
+  .mobile-sub-menu {
+    background: #f8faff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-sub-menu p {
+    font-size: 1rem;
+    color: #556987;
+    margin: 0;
+  }
+
+  /* Mobile Sub-menu Titles */
+  .mobile-sub-title {
+    display: block;
+    font-weight: 700;
+    color: #001B3F;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .mobile-sub-menu p {
+    margin-left: 1rem; 
+  }
+
+  /* Mobile CTA Button */
+  .mobile-btn {
+    width: 50%;
+    height: 3.5rem !important; /* Larger for thumbs */
+    margin-top: 2rem;
+    font-size: 1.1rem !important;
+    box-shadow: 0 4px 12px rgba(255, 197, 15, 0.3);
+  }
+  
+  .drawer-header {
+    display: flex;
+    justify-content: flex-end; /* Pushes icon to the right */
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .drawer-close-icon {
+    font-size: 2.5rem; /* Large enough to tap easily */
+    color: #011633;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .drawer-close-icon:active {
+    transform: scale(0.9); /* Feedback on tap */
+  }
+
+  /* Ensure the drawer itself has 100% height and proper layering */
+  .mobile-drawer.open {
+    right: 0 !important;
+    height: 100vh !important;
+    height: 100svh !important; /* Mobile safe height */
+    top: 0 !important;
+    position: fixed !important;
+    padding: 20px 30px; /* Adjust top padding since we have the header now */
+    z-index: 10002; /* Ensure it stays above everything */
+  }
+}
+
+/* Hard-coded hidden states for safety */
+.drawer-hidden, .toggle-hidden {
+  display: none !important;
+}
