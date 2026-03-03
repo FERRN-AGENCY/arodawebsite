@@ -27,6 +27,41 @@
   z-index: 1;
 }
 
+/* Ensure the section acts as an anchor for the background and stays on top */
+.home-hero-container {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Prevents the slight zoom effect from stretching the page */
+}
+
+/* The dedicated background layer that sits behind everything */
+.futuristic-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Forces it securely behind the Navbar and Hero Text */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Smooth transition settings */
+  filter: blur(0px) brightness(1) contrast(1);
+  transform: scale(1);
+  opacity: 1;
+  transition: filter 0.5s ease-in-out, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease-in-out;
+}
+
+/* The "Futuristic" Glitch/Warp state triggered by React */
+.futuristic-bg.transition-active {
+  /* Rapidly blurs, darkens, boosts contrast, and pushes forward */
+  filter: blur(12px) brightness(0.4) contrast(1.3);
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+
 .home-hero-content {
   /* Scales horizontal padding: min 1.5rem on mobile to 9.25rem on desktop */
   padding: 3rem clamp(1.5rem, 10vw, 9.25rem); 
