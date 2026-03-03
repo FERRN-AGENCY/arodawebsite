@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section 
       className="home-hero-container" 
-      style={{ backgroundImage: `url(${images.home})` }}
+      style={{ backgroundImage: `url(${images.Header1})` }}
     >
       <Navbar />
       

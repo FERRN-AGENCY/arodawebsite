@@ -60,11 +60,14 @@
   gap: 1.5rem;
 }
 
+.grid-top{
+  height: 366px;
+}
+
 .grid-top, .grid-bottom {
   display: grid;
   grid-template-columns: 1.8fr 1fr; /* Staggered width for top row */
   gap: 1.5rem;
-  height: fit-content;
 }
 
 .grid-bottom {

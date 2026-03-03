@@ -7,10 +7,10 @@ const Explore = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { id: 0, title: "Aroda Marketplace", desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", image: images.explore },
-    { id: 1, title: "Aroda Business Pro", desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", image: images.explore },
-    { id: 2, title: "Aroda Finance", desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", image: images.explore },
-    { id: 3, title: "Aroda Logistics", desc: "Move goods with reliability. Delivery designed to keep business operations steady.", image: images.explore }
+    { id: 0, title: "Aroda Marketplace", desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", image: images.Marketplace },
+    { id: 1, title: "Aroda Business Pro", desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", image: images.BusinessPro },
+    { id: 2, title: "Aroda Finance", desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", image: images.Finance },
+    { id: 3, title: "Aroda Logistics", desc: "Move goods with reliability. Delivery designed to keep business operations steady.", image: images.Logistics }
   ];
 
   // --- START AUTO-SWITCH ANIMATION CODE ---

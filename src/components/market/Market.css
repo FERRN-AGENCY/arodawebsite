@@ -92,7 +92,6 @@
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 700;
   text-align: center;
-  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   color: #001B3F;
 }
 

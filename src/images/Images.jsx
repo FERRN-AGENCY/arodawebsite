@@ -35,6 +35,16 @@ import triangleTwo from "../assets/triangleTwo.svg";
 import group from "../assets/Group.svg";
 import ArodaMarketplace from "../assets/ArodaMarketplace.jpg";
 import ArodaBusinessPro from "../assets/ArodaBusiness.jpg";
+import Ecosystem1 from "../assets/Ecosystem1.png";
+import Ecosystem2 from "../assets/Ecosystem2.png";
+import Ecosystem3 from "../assets/Ecosystem3.png";
+import Marketplace from "../assets/Marketplace.png";
+import BusinessPro from "../assets/BusinessPro.png";
+import Finance from "../assets/Finance.png";
+import Logistics from "../assets/Logistics.jpg";
+import Header1 from "../assets/Header1.png";
+import Header2 from "../assets/Header2.png";
+import Header3 from "../assets/Header3.png";
 
 const images = {
   Aroda,
@@ -45,7 +55,7 @@ const images = {
   hero,
   home,
   twitter,
-  linkedin,
+  linkedin, 
   instagram,
   facebook,
   footer,
@@ -71,7 +81,17 @@ const images = {
   triangleTwo,
   group,
   ArodaMarketplace,
-  ArodaBusinessPro
+  ArodaBusinessPro,
+  Ecosystem1,
+  Ecosystem2,
+  Ecosystem3,
+  Marketplace,
+  BusinessPro,
+  Finance,
+  Logistics,
+  Header1,
+  Header2,
+  Header3
 
 };
 

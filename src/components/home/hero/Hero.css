@@ -7,6 +7,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
+  
 }
 
 /* Background Overlay */
@@ -18,6 +19,11 @@
   right: 0;
   bottom: 0;
   /* background: linear-gradient(90deg, rgba(1, 22, 51, 0.8) 0%, rgba(1, 22, 51, 0.2) 100%); */
+  background: radial-gradient(
+  circle at 80% 120%,
+  rgba(0, 0, 0, 0) 46%,
+  #012460 81%
+);
   z-index: 1;
 }
 

@@ -9,9 +9,9 @@ const Ecosystem = () => {
 
   // Data for the statistical card cycle with dynamic image mapping
   const stats = [
-    { id: 0, value: 80, label: "More Accurate Business Records", image: images.ecosystem },
-    { id: 1, value: 70, label: "Reduction in transaction disputes", image: images.ecosystem },
-    { id: 2, value: 65, label: "Faster order fulfillment cycles", image: images.ecosystem }
+    { id: 0, value: 80, label: "More Accurate Business Records", image: images.Ecosystem1},
+    { id: 1, value: 70, label: "Reduction in transaction disputes", image: images.Ecosystem2 },
+    { id: 2, value: 65, label: "Faster order fulfillment cycles", image: images.Ecosystem3 }
   ];
 
   // --- AUTO-SWITCH ANIMATION (Same as Explore) ---

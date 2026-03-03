@@ -55,6 +55,12 @@
   height: fit-content;
   margin-top: auto;
   padding: 2rem 4rem;
+  background: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(4, 26, 56, 1) 80%
+);  
+
 }
 
 .card-overlay-content h3 {
