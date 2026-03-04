@@ -43,25 +43,24 @@
   scale proportionally and never stretch or warp! 
 */
 .semireal {
-    width: 100%;
-    height: 90%;
-    max-height: 80%;
+    width: 120%;
+    height: 140%;
     object-fit: contain;
     background-color: #FFFFFF;
 }
 .real {
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 150%;
     background-color: #FFFFFF;
     object-fit: contain;
     padding: 1.5rem; /* Adds clean breathing room around the logo */
 }
 .notreal {
-  width: 60%;
+  width: 160%;
   height: auto;
-  max-height: 60%;
-  opacity: 0.3;
+  max-height: 160%;
   object-fit: contain;
+  background-color: #FFFFFF;
 }
 
 /* --- Main Title --- */

@@ -77,13 +77,13 @@
 }
 
 .home-hero-description {
-  font-weight: 100;
+  font-weight: 600;
   /* Scales font-size: min 1.1rem to max 1.3rem */
   font-size: clamp(0.9rem, 2vw, 1.3rem); 
   line-height: 160%;
   color: #9BC3FF;
   margin-bottom: 3rem;
-  max-width: 50rem; /* Prevents text from stretching too wide on huge monitors */
+  max-width: 55rem; /* Prevents text from stretching too wide on huge monitors */
 }
 
 .home-hero-description strong {

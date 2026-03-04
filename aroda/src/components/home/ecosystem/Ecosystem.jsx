@@ -46,7 +46,7 @@ const Ecosystem = () => {
     { id: 1, src: images.ArodaMarketplace, alt: "Aroda Main Logo", class:"real"},
     { id: 2, src: images.ArodaBusinessPro, alt: "Aroda Marketplace Logo", class:"real" }, 
     { id: 3, src: images.ArodaFinance, alt: "Aroda Finance Logo", class:"semireal" }, 
-    { id: 4, src: images.bigAroda, alt: "Aroda Community Logo", class:"notreal" } 
+    { id: 4, src: images.ArodaLogistics, alt: "Aroda Logistics Logo", class:"notreal" } 
   ];
 
   return (

@@ -33,9 +33,10 @@ import Testimonial from "../assets/Testimonial.svg";
 import triangle from "../assets/triangle.svg";
 import triangleTwo from "../assets/triangleTwo.svg";
 import group from "../assets/Group.svg";
-import ArodaMarketplace from "../assets/ArodaMarketplace.jpg";
-import ArodaBusinessPro from "../assets/ArodaBusiness.jpg";
+import ArodaMarketplace from "../assets/ArodaMarketplace.png";
+import ArodaBusinessPro from "../assets/ArodaBusiness.png";
 import ArodaFinance from "../assets/ArodaFinance.png";
+import ArodaLogistics from "../assets/ArodaLogistics.png";
 import Ecosystem1 from "../assets/Ecosystem1.png";
 import Ecosystem2 from "../assets/Ecosystem2.png";
 import Ecosystem3 from "../assets/Ecosystem3.png";
@@ -93,6 +94,7 @@ const images = {
   ArodaMarketplace,
   ArodaBusinessPro,
   ArodaFinance,
+  ArodaLogistics,
   Ecosystem1,
   Ecosystem2,
   Ecosystem3,
