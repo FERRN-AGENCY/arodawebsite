@@ -360,4 +360,11 @@
     .intro-text p,.intro-text .highlight-text{
         font-size: 0.9rem;
     }
+    .order-actions {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    margin: 0 auto;
+    }
 }

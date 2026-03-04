@@ -165,12 +165,12 @@ const Navbar = () => {
           </li>
           {openDropdown === 'solutions' && (
             <div className="mobile-sub-menu">
-                <span className="mobile-sub-title">Aroda market place</span>
+                <a className="mobile-sub-title" href="/merchants">Aroda market place</a>
                 <p><a href="/merchants#section">About</a></p>
                 <p><a href="/merchants#setup">Features</a></p>
                 <p><a href="/merchants#FAQ">FAQ</a></p>
                 
-                <span className="mobile-sub-title">Aroda business pro</span>
+                <a className="mobile-sub-title" href="/business">Aroda business pro</a>
                 <p><a href="/business#section">About</a></p>
                 <p><a href="/business#setup">Features</a></p>
                 <p><a href="/business#FAQ">FAQ</a></p>
