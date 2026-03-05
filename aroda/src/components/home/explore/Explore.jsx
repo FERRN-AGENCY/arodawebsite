@@ -27,7 +27,7 @@ const Explore = () => {
     { 
       id: 2, 
       title: "Aroda Finance", 
-      subtitle: "(Coming Soon)",
+      subtitle: " (Coming Soon)",
       desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", 
       image: images.Finance,
       link: "#" // Set to email for now, change to "/finance" when ready
@@ -35,7 +35,7 @@ const Explore = () => {
     { 
       id: 3, 
       title: "Aroda Logistics", 
-      subtitle: "(Coming Soon)",
+      subtitle: " (Coming Soon)",
       desc: "Move goods with reliability. Delivery designed to keep business operations steady.", 
       image: images.Logistics,
       link: "#" // Set to "#" since it's coming soon
@@ -78,7 +78,7 @@ const Explore = () => {
 
           {/* OVERLAY CONTENT */}
           <div className="card-overlay-content">
-            <h3>{tabs[activeTab].title}{tabs[activeTab].subtitle}</h3>
+            <h3>{tabs[activeTab].title}<i>{tabs[activeTab].subtitle}</i></h3>
             <p>{tabs[activeTab].desc}</p>
             
             {/* UPDATED: The href now dynamically pulls from the active tab's data */}

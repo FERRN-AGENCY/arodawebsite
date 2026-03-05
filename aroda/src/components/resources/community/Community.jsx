@@ -56,8 +56,8 @@ const Community = () => {
             ))}
           </div>
 
-          <button className="community-btn">
-            Be a part of the community <HiArrowRight className="btn-arrow" />
+          <button className="community-btn"><a href="https://www.instagram.com/synergixafrica?igsh=aGhnNWZ1aXQ4YmZu"> Be a part of the community </a>
+           <HiArrowRight className="btn-arrow" />
           </button>
         </div>
 

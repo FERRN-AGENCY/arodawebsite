@@ -81,17 +81,12 @@
   /* Scales font-size: min 1.1rem to max 1.3rem */
   font-size: clamp(0.9rem, 2vw, 1.3rem); 
   line-height: 160%;
-  color: #9BC3FF;
+  color: white;
   margin-bottom: 3rem;
   max-width: 55rem; /* Prevents text from stretching too wide on huge monitors */
 }
 
-.home-hero-description strong {
-  color: #9BC3FF;
-  /* Scales font-size: min 1.2rem to max 1.4rem */
-  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
-  font-weight: 600;
-}
+
 
 .hero-btn-group {
   display: flex;

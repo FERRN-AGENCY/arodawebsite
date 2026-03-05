@@ -57,7 +57,7 @@
 }
 .hero-description {
   font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 100;
+  font-weight: 500;
 
   /* Fluid font scaling */
   font-size: clamp(0.95rem, 2vw, 1.4rem);

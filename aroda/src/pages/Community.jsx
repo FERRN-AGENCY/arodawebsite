@@ -8,7 +8,7 @@ const Community = () => {
     <div>
       <Hero 
         badgeText=""
-        link= "https://www.instagram.com/synergixafrica?igsh=aGhnNWZ1aXQ4YmZu"
+        link= "https://synergixafrica.com/"
         titlePart1="Join the Aroda Family"
         titleHighlight=""
         description="A home for business owners and entrepreneurs to connect, learn, and grow. Whether you're starting out or scaling up, find support, inspiration, and game-changing insights here."
