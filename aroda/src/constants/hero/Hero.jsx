@@ -6,7 +6,8 @@ import { HiArrowRight } from "react-icons/hi";
 import './Hero.css';
 
 const Hero = ({ 
-  badgeText, 
+  badgeText,
+  link, 
   titlePart1,
   titlePart2, 
   titleHighlight, 
@@ -44,9 +45,10 @@ const Hero = ({
         <div className="home-hero-btn-group">
           <input type="text" name="" id="" className={input} placeholder={placeholder} />
           <button className={`btn-secondary actual ${className}`}>{secondaryBtnText}</button>
-          <button className="btn-primary">
-            {primaryBtnText} <HiArrowRight className="btn-arrow" />
-          </button>
+          <a href={link}><button className="btn-primary">{primaryBtnText}
+             <HiArrowRight className="btn-arrow" />
+            </button>
+          </a>
         </div>
       </div>
     </section>

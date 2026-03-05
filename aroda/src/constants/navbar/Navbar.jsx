@@ -140,7 +140,7 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta desktop-only">
-          <button className="get-started-btn">Get Started</button>
+          <button className="get-started-btn"><a href="/business">Get Started</a></button>
         </div>
         
         <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -188,7 +188,7 @@ const Navbar = () => {
             </div>
           )}
           <li className="mobile-cta-item">
-            <button className="get-started-btn mobile-btn">Get Started</button>
+            <button className="get-started-btn mobile-btn"><a href="/business">Get Started</a></button>
           </li>
         </ul>
       </div>

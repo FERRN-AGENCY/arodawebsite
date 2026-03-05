@@ -47,7 +47,7 @@ const Hero = () => {
         <div className="hero-btn-group">
           <button className="btn-secondary actual">Explore Solutions</button>
           <button className="btn-primary">
-            Get Started <HiArrowRight className="btn-arrow" />
+            <a href="/business">Get Started </a><HiArrowRight className="btn-arrow" />
           </button>
         </div>
       </div>

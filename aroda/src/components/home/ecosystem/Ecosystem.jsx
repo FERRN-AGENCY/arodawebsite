@@ -128,7 +128,7 @@ const Ecosystem = () => {
                 </p>
               </div>
               <button className="get-started-btns">
-                Get Started <HiArrowRight className="btn-arrow" />
+                <a href="/business">Get Started</a> <HiArrowRight className="btn-arrow" />
               </button>
             </div>
           </div>

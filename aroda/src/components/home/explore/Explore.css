@@ -110,10 +110,7 @@
   font-size: 0.9rem;
   color: #C8E0FF;
   margin-bottom: 1.1rem;
-  max-width: 90%;
   line-height: 1.2rem;
-  margin-bottom: 3.2rem;
-  width: 75%;
   font-weight: 200;
 }
 
@@ -123,6 +120,7 @@
   gap: 1rem;
   width: 100%;
   height: 8px;
+  margin: 0px;
 }
 
 .gap-line {
@@ -134,6 +132,29 @@
 
 .gap-line.active {
   background: #4091FF ;
+}
+.change {
+  display: flex;
+  margin-bottom: 0px;
+  gap: 0.5rem;
+  width: 100%;
+  justify-items: flex-end;
+  color: #FFC50F;
+}
+.change a{
+  margin-left: auto;
+  cursor: pointer;
+}
+.change a, .btn-arrows {
+  font-size: 16px;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #FFC50F;
+  transition: all 0.3s ease;
+}
+
+.change a:hover, .btn-arrows:hover {
+  color: #FFD840;
+  opacity: 0.8;
 }
 
 /* Right Tabs */

@@ -50,9 +50,8 @@ const Footer = () => {
               <h4>Contact Us</h4>
               <ul>
                 {/* respectfully linking emails and phone numbers to trigger device apps */}
-                <li><a href="mailto:support@arodafinances.com">support@arodafinances.com</a></li>
-                <li><a href="tel:+234908649838">+234 908 649 838</a></li>
-                <li><a href="tel:+234908649838">+234 908 649 838</a></li>
+                <li><a href="Info@arodagroup.com">Info@arodagroup.com</a></li>
+                <li><a href="tel:+2349083067701">+234 908 306 7701</a></li>
               </ul>
             </div>
             

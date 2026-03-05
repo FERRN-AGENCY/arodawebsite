@@ -13,7 +13,7 @@ const Block = ({ title, description, cta }) => {
         <h2 className="cta-block-title">{title}</h2>
         <p className="cta-block-description">{description}</p>
         <button className="cta-block-btn">
-          {cta} <HiArrowRight />
+          <a href="/business">{cta}</a> <HiArrowRight />
         </button>
       </div>
     </div>

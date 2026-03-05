@@ -6,11 +6,36 @@ import './Explore.css';
 const Explore = () => {
   const [activeTab, setActiveTab] = useState(0);
 
+  // ADDED: A 'link' property to each tab object to handle unique routing
   const tabs = [
-    { id: 0, title: "Aroda Marketplace", desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", image: images.Marketplace },
-    { id: 1, title: "Aroda Business Pro", desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", image: images.BusinessPro },
-    { id: 2, title: "Aroda Finance", desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", image: images.Finance },
-    { id: 3, title: "Aroda Logistics", desc: "Move goods with reliability. Delivery designed to keep business operations steady.", image: images.Logistics }
+    { 
+      id: 0, 
+      title: "Aroda Marketplace", 
+      desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", 
+      image: images.Marketplace,
+      link: "/merchants" 
+    },
+    { 
+      id: 1, 
+      title: "Aroda Business Pro", 
+      desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", 
+      image: images.BusinessPro,
+      link: "/business" 
+    },
+    { 
+      id: 2, 
+      title: "Aroda Finance", 
+      desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", 
+      image: images.Finance,
+      link: "#" // Set to email for now, change to "/finance" when ready
+    },
+    { 
+      id: 3, 
+      title: "Aroda Logistics(Coming Soon)", 
+      desc: "Move goods with reliability. Delivery designed to keep business operations steady.", 
+      image: images.Logistics,
+      link: "#" // Set to "#" since it's coming soon
+    }
   ];
 
   // --- START AUTO-SWITCH ANIMATION CODE ---
@@ -28,6 +53,7 @@ const Explore = () => {
 
   return (
     <section 
+      id='/explore'
       className="explore-container"
       style={{ backgroundImage: `url(${images.explorebg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
     >
@@ -38,7 +64,6 @@ const Explore = () => {
       <div className="explore-main-grid">
         <div className="explore-card fade-in">
           
-          {/* NEW: Map out all background images so they pre-load and fade smoothly */}
           {tabs.map((tab, index) => (
             <div 
               key={tab.id}
@@ -51,6 +76,11 @@ const Explore = () => {
           <div className="card-overlay-content">
             <h3>{tabs[activeTab].title}</h3>
             <p>{tabs[activeTab].desc}</p>
+            
+            {/* UPDATED: The href now dynamically pulls from the active tab's data */}
+            <p className='change'>
+              <a href={tabs[activeTab].link}>Get Started</a> <HiArrowRight className="btn-arrows" />
+            </p>
             
             <div className="progress-bars">
               {tabs.map((_, index) => (
@@ -76,13 +106,6 @@ const Explore = () => {
             </button>
           ))}
         </div>
-      </div>
-
-      <div className="explore-actions">
-        <button className="btn-secondary actual">Explore Solutions</button>
-        <button className="btn-primary">
-          Get Started <HiArrowRight className="btn-arrow" />
-        </button>
       </div>
     </section>
   );
