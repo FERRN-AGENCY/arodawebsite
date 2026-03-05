@@ -361,8 +361,8 @@
         font-size: 0.9rem;
     }
     .order-actions {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width: fit-content;
     justify-content: center;
     margin: 0 auto;

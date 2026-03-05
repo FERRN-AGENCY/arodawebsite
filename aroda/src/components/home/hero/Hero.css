@@ -159,12 +159,11 @@ a{
 
   .btn-secondary, .btn-primary {
     justify-content: center;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.8rem;
   }
    .hero-btn-group{
     flex-direction: column;
     width: 50%;
     gap: 1rem;
-    margin: 0 auto;
    }
 }

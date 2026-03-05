@@ -148,6 +148,7 @@
   }
   .home-hero-btn-group{
     flex-direction: column;
+    max-width: 12rem;
   }
   .hero-description {
     font-size: 0.95rem;
