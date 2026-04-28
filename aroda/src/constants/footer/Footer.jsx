@@ -41,8 +41,6 @@ const Footer = () => {
               <h4>Company</h4>
               <ul>
                 <li className={getActive('/about')}><a href="/about">About Us</a></li>
-                <li className={getActive('/pricing')}><a href="/pricing">Pricing</a></li>
-                <li className={getActive('/careers')}><a href="/careers">Careers</a></li>
               </ul>
             </div>
             
@@ -60,20 +58,10 @@ const Footer = () => {
               <ul>
                 <li className={getActive('/blog')}><a href="/blog">Blog</a></li>
                 <li className={getActive('/faq')}><a href="/faq">FAQs</a></li>
-                <li className={getActive('/support')}><a href="/support">Support</a></li>
                 <li className={getActive('/about')}><a href="/about">About Us</a></li>
               </ul>
             </div>
             
-            <div className="footer-column">
-              <h4>Privacy Policy</h4>
-              <ul>
-                <li className={getActive('/privacy/general')}><a href="/privacy/general">General</a></li>
-                <li className={getActive('/privacy/merchant')}><a href="/privacy/merchant">Merchant</a></li>
-                <li className={getActive('/privacy/customer')}><a href="/privacy/customer">Customer</a></li>
-                <li className={getActive('/privacy/visitor')}><a href="/privacy/visitor">Visitor</a></li>
-              </ul>
-            </div>
           </div>
         </div>
 
@@ -82,10 +70,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <div className="legal-links">
-            <a href="/terms" className={getActive('/terms')}>Terms of Service</a>
-            <a href="/privacy/general" className={getActive('/privacy/general')}>Privacy Policy</a>
-            <a href="/security" className={getActive('/security')}>Security</a>
-            <a href="/sitemap" className={getActive('/sitemap')}>Sitemaps</a>
+            <a href="/aroda-terms.pdf" target="_blank" rel="noopener noreferrer" className={getActive('/terms')}>
+              Terms of Service
+            </a>
+            <a href="/aroda-privacy.pdf" target="_blank" rel="noopener noreferrer" className={getActive('/privacy/general')}>
+              Privacy Policy
+            </a>
           </div>
           {/* Dynamically grabs the current year so you never have to update it manually! */}
           <p className="copyright">© {new Date().getFullYear()} Aroda Finances. All rights reserved.</p>
