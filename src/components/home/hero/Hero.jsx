@@ -57,7 +57,7 @@ const Hero = () => {
 
         <div className="hero-btn-group">
           <button className="btn-secondary actual" onClick={() => document.getElementById('group')?.scrollIntoView({ behavior: 'smooth' })}>Discover Aroda</button>
-          <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button className="btn-primary" onClick={() => window.location.href = '/contact'}>
             Contact Us <HiArrowRight className="btn-arrow" />
           </button>
         </div>

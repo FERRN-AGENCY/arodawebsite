@@ -49,7 +49,7 @@ const Ecosystem = () => {
         <h2 className="header-title">Two Companies. One Shared Commitment.</h2>
         <div className="logo-grid">
           {groupCompanies.map((company) => (
-            <div key={company} className="logo-item">
+            <div key={company} className="logo-item company-name">
               {company}
             </div>
           ))}

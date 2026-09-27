@@ -80,8 +80,7 @@ const Explore = () => {
       </div>
 
       <div className="explore-actions">
-        <button className="btn-secondary actual" onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}>Explore Solutions</button>
-        <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+        <button className="btn-primary" onClick={() => window.location.href = '/contact'}>
           Discuss Your Needs <HiArrowRight className="btn-arrow" />
         </button>
       </div>

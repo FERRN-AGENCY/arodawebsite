@@ -12,7 +12,7 @@ const Block = ({ title, description, cta }) => {
       <div className="cta-block-content">
         <h2 className="cta-block-title">{title}</h2>
         <p className="cta-block-description">{description}</p>
-        <button className="cta-block-btn" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+        <button className="cta-block-btn" onClick={() => window.location.href = '/contact'}>
           {cta} <HiArrowRight />
         </button>
       </div>

@@ -35,6 +35,24 @@
   text-align: center;
   border-radius: 4px;
 }
+
+.logo-item.company-name {
+  width: min(100%, 330px);
+  min-height: 172px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.logo-item.company-name:hover {
+  transform: translateY(-5px);
+  background-color: #FFFFFF;
+  box-shadow: 0 16px 32px rgba(1, 27, 63, 0.12);
+}
 .real{
     width: 100%;
 }
@@ -274,6 +292,12 @@
     height: fit-content;
     padding: 1.5rem 0rem;
     margin-bottom: 1rem;
+  }
+  .logo-item.company-name {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    font-size: 1.125rem;
   }
   /* Optional: slightly smaller text for small phones */
   .grid-bottom h3 {

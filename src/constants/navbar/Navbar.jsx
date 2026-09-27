@@ -135,7 +135,7 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-cta desktop-only">
-          <button className="get-started-btn" onClick={() => window.location.href = '/#contact'}>Contact Us</button>
+          <button className="get-started-btn" onClick={() => window.location.href = '/contact'}>Contact Us</button>
         </div>
 
         <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -183,7 +183,7 @@ const Navbar = () => {
             </div>
           )}
           <li className="mobile-cta-item">
-            <button className="get-started-btn mobile-btn" onClick={() => window.location.href = '/#contact'}>Contact Us</button>
+            <button className="get-started-btn mobile-btn" onClick={() => window.location.href = '/contact'}>Contact Us</button>
           </li>
         </ul>
       </div>
