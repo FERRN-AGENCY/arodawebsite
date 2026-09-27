@@ -7,10 +7,10 @@ const Explore = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { id: 0, title: "IT & Consulting", heading: "Practical Expertise. Clear Direction.", desc: "We help organisations address business challenges, modernise operations and implement technology through practical advice, systems deployment and project support.", image: images.Header3 },
+    { id: 0, title: "IT & Consulting", heading: "Practical Expertise. Clear Direction.", desc: "We help organisations address business challenges, modernise operations and implement technology through practical advice, systems deployment and project support.", image: images.Marketplace },
     { id: 1, title: "Procurement", heading: "The Right Resources. Reliably Delivered.", desc: "We coordinate the sourcing and delivery of goods, equipment and services, with a focus on quality, value and dependable project execution.", image: images.BusinessPro },
-    { id: 2, title: "Agriculture", heading: "Developing Agricultural Opportunities.", desc: "We support agricultural initiatives and value-chain opportunities through effective partnerships, practical project support and a focus on sustainable commercial outcomes.", image: images.Header1 },
-    { id: 3, title: "Finance", heading: "Financial Solutions That Fit.", desc: "Through Aroda Finance Limited, we provide financial solutions tailored to the objectives of individuals, businesses and organisations, guided by responsible practices and client needs.", image: images.Finance }
+    { id: 2, title: "Agriculture", heading: "Developing Agricultural Opportunities.", desc: "We support agricultural initiatives and value-chain opportunities through effective partnerships, practical project support and a focus on sustainable commercial outcomes.", image: images.Finance },
+    { id: 3, title: "Finance", heading: "Financial Solutions That Fit.", desc: "Through Aroda Finance Limited, we provide financial solutions tailored to the objectives of individuals, businesses and organisations, guided by responsible practices and client needs.", image: images.Logistics }
   ];
 
   // --- START AUTO-SWITCH ANIMATION CODE ---
@@ -52,7 +52,6 @@ const Explore = () => {
           <div className="card-overlay-content" style={{  }}>
             <h3>{tabs[activeTab].heading}</h3>
             <p>{tabs[activeTab].desc}</p>
-            <a className="panel-contact" href="#contact">Discuss Your Needs <HiArrowRight /></a>
             
             <div className="progress-bars">
               {tabs.map((_, index) => (
@@ -80,6 +79,12 @@ const Explore = () => {
         </div>
       </div>
 
+      <div className="explore-actions">
+        <button className="btn-secondary actual" onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}>Explore Solutions</button>
+        <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+          Discuss Your Needs <HiArrowRight className="btn-arrow" />
+        </button>
+      </div>
     </section>
   );
 };

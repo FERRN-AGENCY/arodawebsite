@@ -20,7 +20,7 @@
 /* --- Top Logo Grid --- */
 .logo-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.5rem;
   margin-bottom: 8rem;
 }
@@ -32,19 +32,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-}
-
-.logo-item.company-name {
-  width: min(100%, 390px);
-  min-height: 140px;
-  height: auto;
-  padding: 1rem;
-  box-sizing: border-box;
   text-align: center;
-  color: #001B3F;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  font-weight: 700;
+  border-radius: 4px;
 }
 .real{
     width: 100%;
@@ -151,15 +140,13 @@
   border-radius: 16px;
   padding: 3rem 4rem;
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 1.5rem;
+  align-items: end;
   justify-content: space-between;
   color: #FFFFFF;
 }
 
 .simplified-text {
-  max-width: 100%;
+  max-width: 60%;
 }
 
 .simplified-text h3 {

@@ -27,6 +27,6 @@ export const faqData = [
   {
     id: 6,
     question: "How can I work with Aroda?",
-    answer: <>Contact our team at <a href="mailto:Info@arodagroup.com">Info@arodagroup.com</a> or call <a href="tel:+2349083067701">+234 908 306 7701</a> to discuss your needs. We will help identify the relevant company and expertise within the group for your enquiry.</>
+    answer: "Contact our team at Info@arodagroup.com or call +234 908 306 7701 to discuss your needs. We will help identify the relevant company and expertise within the group for your enquiry."
   }
 ];

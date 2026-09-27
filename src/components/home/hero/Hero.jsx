@@ -51,16 +51,15 @@ const Hero = () => {
         </h1>
         
         <p className="home-hero-description">
-          Aroda is a diversified group providing integrated solutions across Information Technology, Consulting, Procurement, Agriculture and Finance.
-          <br /><br />
+          <strong>Aroda is a diversified group providing integrated solutions across Information Technology, Consulting, Procurement, Agriculture and Finance.</strong> <br />
           We bring together experienced professionals, practical expertise and the right resources to help businesses, government agencies and institutions achieve their objectives.
         </p>
 
         <div className="hero-btn-group">
-          <a className="btn-secondary actual" href="#group">Discover Aroda</a>
-          <a className="btn-primary" href="#contact">
+          <button className="btn-secondary actual" onClick={() => document.getElementById('group')?.scrollIntoView({ behavior: 'smooth' })}>Discover Aroda</button>
+          <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Contact Us <HiArrowRight className="btn-arrow" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

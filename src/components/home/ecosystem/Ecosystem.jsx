@@ -5,6 +5,7 @@ import './Ecosystem.css';
 
 const Ecosystem = () => {
   const [activeStat, setActiveStat] = useState(0);
+  const [displayValue, setDisplayValue] = useState(0);
 
   // Data for the statistical card cycle with dynamic image mapping
   const stats = [
@@ -21,6 +22,25 @@ const Ecosystem = () => {
     return () => clearInterval(timer);
   }, [stats.length]);
 
+  // --- NUMBER COUNTING LOGIC ---
+  useEffect(() => {
+    let start = 0;
+    const end = stats[activeStat].value;
+    const duration = 2500;
+    const increment = end / (duration / 16);
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setDisplayValue(end);
+        clearInterval(counter);
+      } else {
+        setDisplayValue(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(counter);
+  }, [activeStat]);
   const groupCompanies = ["Aroda Finance Limited", "O & K Global Resources Limited"];
   return (
     <section className="ecosystem-container" id="group">
@@ -29,7 +49,7 @@ const Ecosystem = () => {
         <h2 className="header-title">Two Companies. One Shared Commitment.</h2>
         <div className="logo-grid">
           {groupCompanies.map((company) => (
-            <div key={company} className="logo-item company-name">
+            <div key={company} className="logo-item">
               {company}
             </div>
           ))}
@@ -57,7 +77,7 @@ const Ecosystem = () => {
             {/* The Stat Card (Animated) */}
             <div className="stat-card">
               <div className="stat-content">
-                <h3 className="stat-value">{stats[activeStat].value}</h3>
+                <h3 className="stat-value">{displayValue}</h3>
                 <p className="stat-label">{stats[activeStat].label}</p>
               </div>
               
@@ -87,9 +107,9 @@ const Ecosystem = () => {
                   Our team brings hands-on experience in designing, managing and delivering projects for corporations, government agencies and private organisations. We combine an understanding of each client’s needs with disciplined execution to turn objectives into practical outcomes.
                 </p>
               </div>
-              <a className="get-started-btns" href="/#group">
+              <button className="get-started-btns" onClick={() => window.location.href = '/#group'}>
                 About Aroda <HiArrowRight className="btn-arrow" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
