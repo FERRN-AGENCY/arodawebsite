@@ -5,13 +5,12 @@ import './Ecosystem.css';
 
 const Ecosystem = () => {
   const [activeStat, setActiveStat] = useState(0);
-  const [displayValue, setDisplayValue] = useState(0);
 
   // Data for the statistical card cycle with dynamic image mapping
   const stats = [
-    { id: 0, value: 80, label: "More Accurate Business Records", image: images.Ecosystem1},
-    { id: 1, value: 70, label: "Reduction in transaction disputes", image: images.Ecosystem2 },
-    { id: 2, value: 65, label: "Faster order fulfillment cycles", image: images.Ecosystem3 }
+    { id: 0, value: 2, label: "Companies within the group", image: images.Ecosystem1},
+    { id: 1, value: 5, label: "Areas of expertise", image: images.Ecosystem2 },
+    { id: 2, value: 1, label: "Shared commitment to results", image: images.Ecosystem3 }
   ];
 
   // --- AUTO-SWITCH ANIMATION (Same as Explore) ---
@@ -22,40 +21,16 @@ const Ecosystem = () => {
     return () => clearInterval(timer);
   }, [stats.length]);
 
-  // --- NUMBER COUNTING LOGIC ---
-  useEffect(() => {
-    let start = 0;
-    const end = stats[activeStat].value;
-    const duration = 2500; 
-    const increment = end / (duration / 16);
-
-    const counter = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setDisplayValue(end);
-        clearInterval(counter);
-      } else {
-        setDisplayValue(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(counter);
-  }, [activeStat]);
-  const ecosystemLogos = [
-    { id: 1, src: images.ArodaMarketplace, alt: "Aroda Main Logo", class:"real"},
-    { id: 2, src: images.ArodaBusinessPro, alt: "Aroda Marketplace Logo", class:"real" }, // Swap with your actual image variable
-    { id: 3, src: images.bigAroda, alt: "Aroda Business Pro Logo", class:"notreal" }, // Swap with your actual image variable
-    { id: 4, src: images.bigAroda, alt: "Aroda Community Logo", class:"notreal" } // Swap with your actual image variable
-  ];
+  const groupCompanies = ["Aroda Finance Limited", "O & K Global Resources Limited"];
   return (
-    <section className="ecosystem-container">
+    <section className="ecosystem-container" id="group">
       {/* Top Logo Grid Section */}
       <div className="ecosystem-header">
-        <h2 className="header-title">One Ecosystem. Multiple Pathways.</h2>
+        <h2 className="header-title">Two Companies. One Shared Commitment.</h2>
         <div className="logo-grid">
-          {ecosystemLogos.map((logo) => (
-            <div key={logo.id} className="logo-item">
-              <img src={logo.src} alt={logo.alt} className={logo.class}/>
+          {groupCompanies.map((company) => (
+            <div key={company} className="logo-item company-name">
+              {company}
             </div>
           ))}
         </div>
@@ -64,7 +39,7 @@ const Ecosystem = () => {
       {/* Main Content Area */}
       <div className="ecosystem-content">
         <h2 className="main-title">
-          Everything you need to sell, manage, and grow in one ecosystem.
+          The expertise to solve.<br />The experience to deliver.
         </h2>
 
         <div className="ecosystem-grid">
@@ -82,7 +57,7 @@ const Ecosystem = () => {
             {/* The Stat Card (Animated) */}
             <div className="stat-card">
               <div className="stat-content">
-                <h3 className="stat-value">{displayValue}%</h3>
+                <h3 className="stat-value">{stats[activeStat].value}</h3>
                 <p className="stat-label">{stats[activeStat].label}</p>
               </div>
               
@@ -107,16 +82,14 @@ const Ecosystem = () => {
 
             <div className="simplified-card">
               <div className="simplified-text">
-                <h3>Business, Simplified</h3>
+                <h3>Experience That Delivers</h3>
                 <p>
-                  Aroda connects the tools businesses need to operate efficiently 
-                  with a marketplace where buyers can transact safely. 
-                  No noise. No shortcuts. Just systems that work.
+                  Our team brings hands-on experience in designing, managing and delivering projects for corporations, government agencies and private organisations. We combine an understanding of each client’s needs with disciplined execution to turn objectives into practical outcomes.
                 </p>
               </div>
-              <button className="get-started-btns">
-                Get Started <HiArrowRight className="btn-arrow" />
-              </button>
+              <a className="get-started-btns" href="/#group">
+                About Aroda <HiArrowRight className="btn-arrow" />
+              </a>
             </div>
           </div>
         </div>

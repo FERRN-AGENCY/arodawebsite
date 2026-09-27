@@ -12,9 +12,9 @@ const Block = ({ title, description, cta }) => {
       <div className="cta-block-content">
         <h2 className="cta-block-title">{title}</h2>
         <p className="cta-block-description">{description}</p>
-        <button className="cta-block-btn">
+        <a className="cta-block-btn" href="#contact">
           {cta} <HiArrowRight />
-        </button>
+        </a>
       </div>
     </div>
   );

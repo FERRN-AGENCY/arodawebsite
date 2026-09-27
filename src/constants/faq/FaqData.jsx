@@ -2,31 +2,31 @@ export const faqData = [
   {
     id: 1,
     question: "What is Aroda?",
-    answer: "Aroda is a digital commerce ecosystem that provides tools and marketplaces designed to help businesses operate clearly and customers buy and sell with less friction."
+    answer: "Aroda is a diversified group of companies providing integrated solutions across Information Technology, Consulting, Procurement, Agriculture and Finance. We bring together expertise and resources to help clients solve problems and deliver projects."
   },
   {
     id: 2,
-    question: "Is Aroda a marketplace or a business app?",
-    answer: "Aroda offers both! We have a consumer marketplace for buyers and a suite of business tools (Aroda Pro) for merchants."
+    question: "Which companies make up the group?",
+    answer: "The group comprises Aroda Finance Limited and O & K Global Resources Limited. Aroda Finance provides financial solutions, while O & K Global Resources operates across IT, Consulting, Procurement and Agriculture."
   },
   {
     id: 3,
-    question: "Do I need technical experience to use Aroda?",
-    answer: "No, our systems are built to be intuitive and can be set up within minutes without coding knowledge."
+    question: "Who does Aroda work with?",
+    answer: "We work with businesses, government agencies, institutions and private-sector organisations. Through Aroda Finance Limited, we also support individuals with solutions tailored to their financial objectives."
   },
   {
     id: 4,
-    question: "Is Aroda only available in Nigeria?",
-    answer: "Currently, our primary focus is Nigeria, but we are scaling to support economic growth across Africa."
+    question: "What experience does Aroda bring?",
+    answer: "Our team includes professionals with experience in project design, deployment, implementation and management. Their work spans large corporations, government agencies and private enterprises across diverse project environments."
   },
   {
     id: 5,
-    question: "How do I get started?",
-    answer: "Simply click the 'Get Started' button, choose your account type, and follow the verification steps."
+    question: "How does Aroda approach a project?",
+    answer: "We begin by understanding your objectives and requirements. We then bring together the appropriate expertise, resources and partners to develop a practical solution and manage delivery with discipline and accountability."
   },
   {
     id: 6,
-    question: "Are all Aroda products connected?",
-    answer: "Yes, your marketplace activity and business management tools sync seamlessly across the platform."
+    question: "How can I work with Aroda?",
+    answer: <>Contact our team at <a href="mailto:Info@arodagroup.com">Info@arodagroup.com</a> or call <a href="tel:+2349083067701">+234 908 306 7701</a> to discuss your needs. We will help identify the relevant company and expertise within the group for your enquiry.</>
   }
 ];

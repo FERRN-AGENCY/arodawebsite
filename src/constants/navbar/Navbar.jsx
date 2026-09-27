@@ -4,28 +4,37 @@ import { IoIosArrowDown, IoMdMenu, IoMdClose } from "react-icons/io";
 import './Navbar.css';
 
 const Navbar = () => {
-  const [activeMenu, setActiveMenu] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+  // 1. DEDICATED DROPDOWN STATE: Only tracks which menu is currently toggled open
+  const [openDropdown, setOpenDropdown] = useState('');
+
+  // 2. DEDICATED ROUTE STATE: Tracks the actual page URL
+  const currentPath = window.location.pathname;
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 960);
-  
-  // States for sticky scroll behavior
+
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [navbarVisible, setNavbarVisible] = useState(true);
-  
+
   const navRef = useRef(null);
+
+  // Checkers to see if a specific nav item should be highlighted based on the URL
+  const isHomeActive = currentPath === '/home' || currentPath === '/';
+  const isSolutionsActive = currentPath.includes('/business') || currentPath.includes('/merchants');
+  const isResourcesActive = currentPath.includes('/blog') || currentPath.includes('/community') || currentPath.includes('/faq');
 
   // Handle clicks outside the dropdowns and window resizing
   useEffect(() => {
     const handleEvents = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
-        setActiveMenu('home');
+        setOpenDropdown(''); // Close dropdowns when clicking outside
         setIsMobileMenuOpen(false);
       }
     };
 
     const handleResize = () => {
       const desktopCheck = window.innerWidth > 960;
-      setIsDesktop(desktopCheck); 
+      setIsDesktop(desktopCheck);
 
       if (desktopCheck && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
@@ -34,7 +43,7 @@ const Navbar = () => {
 
     document.addEventListener('mousedown', handleEvents);
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       document.removeEventListener('mousedown', handleEvents);
       window.removeEventListener('resize', handleResize);
@@ -46,14 +55,13 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       const isScrollingUp = prevScrollPos > currentScrollPos;
-      
-      // Navbar is visible if scrolling up OR if within 50px of the very top
+
       setNavbarVisible(isScrollingUp || currentScrollPos < 50);
       setPrevScrollPos(currentScrollPos);
 
-      // ADDED: Close any open dropdown menus as soon as the user starts scrolling
-      if (currentScrollPos > 10) { 
-        setActiveMenu('home');
+      // Close open dropdown menus as soon as the user starts scrolling
+      if (currentScrollPos > 10) {
+        setOpenDropdown('');
       }
     };
 
@@ -62,8 +70,8 @@ const Navbar = () => {
   }, [prevScrollPos]);
 
   return (
-    <nav 
-      className={`navbar-wrapper ${isMobileMenuOpen ? 'mobile-nav-active' : ''} ${navbarVisible ? 'nav-visible' : 'nav-hidden'}`} 
+    <nav
+      className={`navbar-wrapper ${isMobileMenuOpen ? 'mobile-nav-active' : ''} ${navbarVisible ? 'nav-visible' : 'nav-hidden'}`}
       ref={navRef}
     >
       <div className="navbar">
@@ -72,44 +80,51 @@ const Navbar = () => {
         </div>
 
         <ul className="navbar-links desktop-only">
-          <li className={`nav-item ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => setActiveMenu('home')}>Home</li>
-          
-          {/* SOLUTIONS DROPDOWN (Two Columns) */}
-          <li className={`nav-item dropdown ${activeMenu === 'solutions' ? 'active' : ''}`} 
-              onClick={() => setActiveMenu(prev => prev === 'solutions' ? 'home' : 'solutions')}
-              style={{ position: 'relative' }}>
+          {/* HOME: Now acts as a real link, redirects to /home, and highlights if on home */}
+          <li
+            className={`nav-item ${isHomeActive ? 'active' : ''}`}
+            onClick={() => window.location.href = '/home'}
+          >
+            Home
+          </li>
+
+          {/* SOLUTIONS DROPDOWN */}
+          <li
+            /* Highlighted if the URL is /business or /merchants, OR if the dropdown is manually opened */
+            className={`nav-item dropdown ${(isSolutionsActive || openDropdown === 'solutions') ? 'active' : ''}`}
+            onClick={() => setOpenDropdown(prev => prev === 'solutions' ? '' : 'solutions')}
+            style={{ position: 'relative' }}
+          >
             Solutions <IoIosArrowDown className="arrow-icon" />
-            
-            {isDesktop && activeMenu === 'solutions' && (
+
+            {isDesktop && openDropdown === 'solutions' && (
               <div className="resources-desktop-dropdown solutions-dropdown">
-                
-                {/* Column 1: Aroda Market Place */}
                 <div className="dropdown-column">
                   <span className="dropdown-title"><a href="/merchants">Aroda market place</a></span>
                   <a href="/merchants#section">About</a>
                   <a href="/merchants#setup">Features</a>
                   <a href="/merchants#FAQ">FAQ</a>
                 </div>
-
-                {/* Column 2: Aroda Business Pro */}
                 <div className="dropdown-column">
                   <span className="dropdown-title"><a href="/business">Aroda business pro</a></span>
                   <a href="/business#section">About</a>
                   <a href="/business#setup">Features</a>
                   <a href="/business#FAQ">FAQ</a>
                 </div>
-
               </div>
             )}
           </li>
-          
+
           {/* RESOURCES DROPDOWN */}
-          <li className={`nav-item dropdown ${activeMenu === 'resources' ? 'active' : ''}`} 
-              onClick={() => setActiveMenu(prev => prev === 'resources' ? 'home' : 'resources')}
-              style={{ position: 'relative' }}>
+          <li
+            /* Highlighted if the URL is a resource page, OR if the dropdown is manually opened */
+            className={`nav-item dropdown ${(isResourcesActive || openDropdown === 'resources') ? 'active' : ''}`}
+            onClick={() => setOpenDropdown(prev => prev === 'resources' ? '' : 'resources')}
+            style={{ position: 'relative' }}
+          >
             Resources <IoIosArrowDown className="arrow-icon" />
-            
-            {isDesktop && activeMenu === 'resources' && (
+
+            {isDesktop && openDropdown === 'resources' && (
               <div className="resources-desktop-dropdown">
                 <a href="/blog">Blog</a>
                 <a href="/community">Community</a>
@@ -117,21 +132,19 @@ const Navbar = () => {
               </div>
             )}
           </li>
-
-          <li className="nav-item" onClick={() => setActiveMenu('business')}>Business Solutions</li>
         </ul>
 
         <div className="navbar-cta desktop-only">
-          <button className="get-started-btn">Get Started</button>
+          <a className="get-started-btn" href="/#contact">Contact Us</a>
         </div>
-        
+
         <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
            {isMobileMenuOpen ? <IoMdClose /> : <IoMdMenu />}
         </div>
       </div>
-      
+
       {/* MOBILE MENU DRAWER */}
-      <div 
+      <div
         className={`mobile-drawer ${isMobileMenuOpen ? 'open' : 'drawer-hidden'}`}
         style={{ display: isMobileMenuOpen ? 'block' : 'none' }}
       >
@@ -139,39 +152,38 @@ const Navbar = () => {
           <IoMdClose className="drawer-close-icon" onClick={() => setIsMobileMenuOpen(false)} />
         </div>
         <ul className="mobile-links">
-          <li onClick={() => setIsMobileMenuOpen(false)}>Home</li>
-          
-          <li onClick={() => setActiveMenu(activeMenu === 'solutions' ? 'home' : 'solutions')}>
-            Solutions <IoIosArrowDown className={activeMenu === 'solutions' ? 'rotate' : ''} />
+          {/* Mobile Home Redirect */}
+          <li className={isHomeActive ? 'active' : ''} onClick={() => window.location.href = '/home'}>Home</li>
+
+          <li className={(isSolutionsActive || openDropdown === 'solutions') ? 'active' : ''} onClick={() => setOpenDropdown(prev => prev === 'solutions' ? '' : 'solutions')}>
+            Solutions <IoIosArrowDown className={openDropdown === 'solutions' ? 'rotate' : ''} />
           </li>
-          {activeMenu === 'solutions' && (
+          {openDropdown === 'solutions' && (
             <div className="mobile-sub-menu">
-                <span className="mobile-sub-title">Aroda market place</span>
+                <a className="mobile-sub-title" href="/merchants">Aroda market place</a>
                 <p><a href="/merchants#section">About</a></p>
                 <p><a href="/merchants#setup">Features</a></p>
                 <p><a href="/merchants#FAQ">FAQ</a></p>
-                
-                <span className="mobile-sub-title">Aroda business pro</span>
+
+                <a className="mobile-sub-title" href="/business">Aroda business pro</a>
                 <p><a href="/business#section">About</a></p>
                 <p><a href="/business#setup">Features</a></p>
                 <p><a href="/business#FAQ">FAQ</a></p>
             </div>
           )}
 
-          <li onClick={() => setActiveMenu(activeMenu === 'resources' ? 'home' : 'resources')}>
-            Resources <IoIosArrowDown className={activeMenu === 'resources' ? 'rotate' : ''} />
+          <li className={(isResourcesActive || openDropdown === 'resources') ? 'active' : ''} onClick={() => setOpenDropdown(prev => prev === 'resources' ? '' : 'resources')}>
+            Resources <IoIosArrowDown className={openDropdown === 'resources' ? 'rotate' : ''} />
           </li>
-          {activeMenu === 'resources' && (
+          {openDropdown === 'resources' && (
             <div className="mobile-sub-menu">
                 <p><a href="/blog">Blog</a></p>
                 <p><a href="/community">Community</a></p>
                 <p><a href="/faq">FAQ</a></p>
             </div>
           )}
-
-          <li onClick={() => setIsMobileMenuOpen(false)}>Business Solutions</li>
           <li className="mobile-cta-item">
-            <button className="get-started-btn mobile-btn">Get Started</button>
+            <a className="get-started-btn mobile-btn" href="/#contact">Contact Us</a>
           </li>
         </ul>
       </div>

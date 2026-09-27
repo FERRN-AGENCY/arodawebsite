@@ -7,10 +7,10 @@ const Explore = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { id: 0, title: "Aroda Marketplace", desc: "Run your business with full visibility. Track sales, stock, staff, and profit in one simple app.", image: images.Marketplace },
-    { id: 1, title: "Aroda Business Pro", desc: "Buy and sell with confidence. Trade through excellence verified merchants under clear standards.", image: images.BusinessPro },
-    { id: 2, title: "Aroda Finance", desc: "Access capital with structure. Transparent terms and predictable repayment built for businesses.", image: images.Finance },
-    { id: 3, title: "Aroda Logistics", desc: "Move goods with reliability. Delivery designed to keep business operations steady.", image: images.Logistics }
+    { id: 0, title: "IT & Consulting", heading: "Practical Expertise. Clear Direction.", desc: "We help organisations address business challenges, modernise operations and implement technology through practical advice, systems deployment and project support.", image: images.Header3 },
+    { id: 1, title: "Procurement", heading: "The Right Resources. Reliably Delivered.", desc: "We coordinate the sourcing and delivery of goods, equipment and services, with a focus on quality, value and dependable project execution.", image: images.BusinessPro },
+    { id: 2, title: "Agriculture", heading: "Developing Agricultural Opportunities.", desc: "We support agricultural initiatives and value-chain opportunities through effective partnerships, practical project support and a focus on sustainable commercial outcomes.", image: images.Header1 },
+    { id: 3, title: "Finance", heading: "Financial Solutions That Fit.", desc: "Through Aroda Finance Limited, we provide financial solutions tailored to the objectives of individuals, businesses and organisations, guided by responsible practices and client needs.", image: images.Finance }
   ];
 
   // --- START AUTO-SWITCH ANIMATION CODE ---
@@ -28,11 +28,11 @@ const Explore = () => {
   // --- END AUTO-SWITCH ANIMATION CODE ---
 
   return (
-    <section className="explore-container"
+    <section className="explore-container" id="expertise"
       style={{ backgroundImage: `url(${images.explorebg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
       >
       <h2 className="explore-title">
-        Smart Tools for Every Step of Your Business Journey
+        Expertise Across Sectors.<br />Focused on Results.
       </h2>
 
       <div className="explore-main-grid">
@@ -50,8 +50,9 @@ const Explore = () => {
           }}
         >
           <div className="card-overlay-content" style={{  }}>
-            <h3>{tabs[activeTab].title}</h3>
+            <h3>{tabs[activeTab].heading}</h3>
             <p>{tabs[activeTab].desc}</p>
+            <a className="panel-contact" href="#contact">Discuss Your Needs <HiArrowRight /></a>
             
             <div className="progress-bars">
               {tabs.map((_, index) => (
@@ -79,12 +80,6 @@ const Explore = () => {
         </div>
       </div>
 
-      <div className="explore-actions">
-        <button className="btn-secondary actual">Explore Solutions</button>
-        <button className="btn-primary">
-          Get Started <HiArrowRight className="btn-arrow" />
-        </button>
-      </div>
     </section>
   );
 };

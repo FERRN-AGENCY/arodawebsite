@@ -46,21 +46,21 @@ const Hero = () => {
       
       <div className="home-hero-content">
         <h1 className="home-hero-title">
-          Tools and Marketplaces <br />
-          for Everyday Transactions
+          Driving Solutions. <br />
+          Delivering Results.
         </h1>
         
         <p className="home-hero-description">
-          <strong>Business shouldn’t rely on guesswork. Buying shouldn't feel uncertain.</strong> <br />
-          Aroda builds structured digital infrastructure that brings clarity and trust to everyday 
-          commerce so businesses run clearly and customers transact with confidence.
+          Aroda is a diversified group providing integrated solutions across Information Technology, Consulting, Procurement, Agriculture and Finance.
+          <br /><br />
+          We bring together experienced professionals, practical expertise and the right resources to help businesses, government agencies and institutions achieve their objectives.
         </p>
 
         <div className="hero-btn-group">
-          <button className="btn-secondary actual">Explore Solutions</button>
-          <button className="btn-primary">
-            Get Started <HiArrowRight className="btn-arrow" />
-          </button>
+          <a className="btn-secondary actual" href="#group">Discover Aroda</a>
+          <a className="btn-primary" href="#contact">
+            Contact Us <HiArrowRight className="btn-arrow" />
+          </a>
         </div>
       </div>
     </section>

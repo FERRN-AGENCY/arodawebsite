@@ -134,6 +134,15 @@
 }
 
 /* Bottom Actions */
+.panel-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFC50F;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 .explore-actions {
   display: flex;
   gap: 1.5rem;

@@ -37,9 +37,9 @@ useEffect(() => {
       </div>
 
       <Block 
-        title="Systems built for growth"
-        description="Whether you’re running a business, starting one, or supporting economic growth, Aroda is built for you."
-        cta="Get Started"
+        title="Your Objectives. Our Commitment."
+        description="Have a project to deliver or a challenge to solve? Let’s discuss how our expertise, resources and experience can help you move forward."
+        cta="Talk to Our Team"
       />
     </div>
   );
